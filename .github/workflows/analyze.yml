@@ -2,7 +2,7 @@ name: Weekly Gong Analysis
 
 on:
   schedule:
-    - cron: '0 6 * * 1'   # Every Monday 6am UTC
+    - cron: '0 17 * * 5'  # Every Friday 1pm ET (5pm UTC / EDT)
   workflow_dispatch:        # Manual trigger from GitHub UI
 
 jobs:
