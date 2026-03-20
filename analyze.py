@@ -188,8 +188,9 @@ NOTION_DATABASE_ID = (os.environ.get("NOTION_CATALOG_DB_ID", "")
 # STEP 0 — Internal user IDs
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def fetch_internal_user_ids() -> set[str]:
+def fetch_internal_user_ids() -> tuple[set[str], dict[str, str]]:
     ids: set[str] = set()
+    user_map: dict[str, str] = {}   # id → "First Last"
     cursor = None
     while True:
         params = {"cursor": cursor} if cursor else {}
@@ -197,19 +198,23 @@ def fetch_internal_user_ids() -> set[str]:
         resp.raise_for_status()
         data = resp.json()
         for u in data.get("users", []):
-            ids.add(u["id"])
+            uid  = u["id"]
+            name = f"{u.get('firstName', '')} {u.get('lastName', '')}".strip()
+            ids.add(uid)
+            if name:
+                user_map[uid] = name
         cursor = data.get("records", {}).get("cursor")
         if not cursor or not data.get("users"):
             break
     print(f"  ✓ Internal users: {len(ids)}")
-    return ids
+    return ids, user_map
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # STEP 1 — Fetch calls
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def fetch_calls() -> dict[str, dict]:
+def fetch_calls(user_map: dict[str, str]) -> dict[str, dict]:
     print(f"\n{'='*60}\nSTEP 1 — Fetching calls (trailing 30 days)\n  {FROM_DATE[:10]} → {TO_DATE[:10]}\n{'='*60}")
     calls_meta = {}
     cursor = None
@@ -225,11 +230,13 @@ def fetch_calls() -> dict[str, dict]:
         for c in data.get("calls", []):
             cid = c.get("id", "")
             if cid:
-                started = c.get("started", "")
+                started    = c.get("started", "")
+                primary_id = c.get("primaryUserId", "")
                 calls_meta[cid] = {
-                    "title": c.get("title") or "Untitled call",
-                    "date":  started[:10] if started else "",
-                    "url":   c.get("url", ""),
+                    "title":    c.get("title") or "Untitled call",
+                    "date":     started[:10] if started else "",
+                    "url":      c.get("url", ""),
+                    "rep_name": user_map.get(primary_id, ""),
                 }
         print(f"  Page {page}: {len(data.get('calls',[]))} calls  (total: {len(calls_meta)})")
         cursor = data.get("records", {}).get("cursor")
@@ -319,7 +326,8 @@ def _extract_for_call(call, calls_meta, internal_ids, client):
                 return []
             questions = json.loads(match.group())
             return [{"text": q.strip(), "call_id": call_id, "call_title": meta.get("title", "Untitled"),
-                     "call_date": meta.get("date", ""), "call_url": meta.get("url", "")}
+                     "call_date": meta.get("date", ""), "call_url": meta.get("url", ""),
+                     "rep_name": meta.get("rep_name", "")}
                     for q in questions if isinstance(q, str) and len(q.strip()) > 15]
         except (json.JSONDecodeError, IndexError):
             return []
@@ -485,10 +493,9 @@ def classify_questions(all_questions, categories, descriptions, client):
         r"|your feedback|my feedback|see my screen|recording|muted|unmuted)\b",
         re.IGNORECASE,
     )
-    before = sum(len(v) for v in classified.values())
-    classified = {cat: [q for q in qs if not _NOISE.search(q["text"])]
-                  for cat, qs in classified.items()}
-    after = sum(len(v) for v in classified.values())
+    before = len(classified)
+    classified = [q for q in classified if not _NOISE.search(q["text"])]
+    after = len(classified)
     if before - after:
         print(f"  ✓ Filtered {before - after} logistics/noise questions")
 
@@ -549,7 +556,7 @@ def _cluster_chunk(category, questions, client):
                         seen.add(cid)
                         sources.append({"call_id": cid, "call_title": q.get("call_title", ""),
                                         "call_date": q.get("call_date", ""), "call_url": q.get("call_url", ""),
-                                        "question": q.get("text", "")})
+                                        "question": q.get("text", ""), "rep_name": q.get("rep_name", "")})
                 result.append({"canonical": c.get("canonical", questions[indices[0]]["text"]), "sources": sources})
             return result
         except (json.JSONDecodeError, KeyError, TypeError):
@@ -977,7 +984,7 @@ def main():
     client = anthropic.Anthropic(api_key=api_key)
 
     print("  Loading internal Gong users...")
-    internal_ids = fetch_internal_user_ids()
+    internal_ids, user_map = fetch_internal_user_ids()
 
     if use_classified_cache and os.path.exists(CLASSIFIED_CACHE):
         print(f"\n  ── Using classified cache ──")
@@ -997,7 +1004,7 @@ def main():
         classified = classify_questions(all_questions, categories, descriptions, client)
 
     else:
-        calls_meta = fetch_calls()
+        calls_meta = fetch_calls(user_map)
         if not calls_meta:
             print("\n⚠  No calls found."); return
         transcripts = fetch_transcripts(list(calls_meta.keys()))

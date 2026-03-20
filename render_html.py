@@ -30,6 +30,15 @@ def write_html(ranked, total_questions, from_date, to_date,
     now_str   = datetime.now().strftime("%B %d, %Y at %H:%M")
     max_calls = max((r["total_calls"] for r in ranked), default=1)
 
+    # Collect all rep names across all clusters
+    all_reps = sorted({
+        s.get("rep_name", "")
+        for r in ranked
+        for cl in r.get("clusters", [])
+        for s in cl.get("sources", [])
+        if s.get("rep_name", "")
+    })
+
     from datetime import datetime as _dt
     _fd = _dt.strptime(from_date[:10], "%Y-%m-%d")
     _td = _dt.strptime(to_date[:10], "%Y-%m-%d")
@@ -48,10 +57,14 @@ def write_html(ranked, total_questions, from_date, to_date,
         pct = round((r["total_calls"] / max_calls) * 100)
         rank_label     = "" if is_emerging else f'<span class="ci-rank">#{i+1}</span>'
         emerging_badge = '<span class="ci-emerging-badge">Emerging</span>' if is_emerging else ""
+        cat_reps = esc("|".join(sorted({
+            s.get("rep_name", "") for cl in r.get("clusters", [])
+            for s in cl.get("sources", []) if s.get("rep_name", "")
+        })))
         cat_items += (
             f'<div class="cat-item{"  cat-item-emerging" if is_emerging else ""}"'
             f' data-cat="{i}" data-calls="{r["total_calls"]}" data-questions="{r["total"]}"'
-            f' data-pct="{pct}" data-name="{esc(r["category"])}" onclick="selectCat({i})">\n'
+            f' data-pct="{pct}" data-name="{esc(r["category"])}" data-reps="{cat_reps}" onclick="selectCat({i})">\n'
             f'  <div class="ci-header">\n'
             f'    {rank_label}{emerging_badge}\n'
             f'    <span class="ci-name">{esc(r["category"])}</span>\n'
@@ -112,12 +125,13 @@ def write_html(ranked, total_questions, from_date, to_date,
             src_s      = "s" if n_src != 1 else ""
             src_toggle = (
                 f'<details class="src-toggle">'
-                f'<summary>View {n_src} source call{src_s}</summary>'
+                f'<summary>{n_src} call{src_s}</summary>'
                 f'<div class="src-list">{src_items}</div></details>'
             ) if src_items else ""
 
+            cl_reps = esc("|".join(sorted({s.get("rep_name","") for s in cl.get("sources",[]) if s.get("rep_name","")})))
             questions_html += (
-                f'<div class="q-row" data-text="{esc(cl["canonical"].lower())}">\n'
+                f'<div class="q-row" data-text="{esc(cl["canonical"].lower())}" data-reps="{cl_reps}">\n'
                 f'  <div class="q-left">\n'
                 f'    <span class="q-rank">#{q_idx+1}</span>\n'
                 f'    <span class="q-freq">{cl["call_count"]}'
@@ -142,6 +156,8 @@ def write_html(ranked, total_questions, from_date, to_date,
             f'  <div class="qp-list" id="qplist-{i}">{questions_html}</div>\n'
             f'</div>\n'
         )
+
+    rep_options = "\n".join(f'<option value="{esc(r)}">{esc(r)}</option>' for r in all_reps)
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -185,6 +201,8 @@ body{{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-
 .lp-controls{{padding:14px 16px;border-bottom:1px solid var(--border);flex-shrink:0}}
 .lp-search{{width:100%;padding:7px 11px;border:1px solid var(--border);border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;background:var(--bg);color:var(--ink);outline:none}}
 .lp-search:focus{{border-color:var(--accent)}}
+.lp-rep-filter{{width:100%;margin-top:8px;padding:7px 11px;border:1px solid var(--border);border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;background:var(--bg);color:var(--ink);outline:none;cursor:pointer}}
+.lp-rep-filter:focus{{border-color:var(--accent)}}
 .lp-sort{{display:flex;gap:6px;margin-top:8px}}
 .sort-btn{{flex:1;font-family:'IBM Plex Mono',monospace;font-size:.62rem;padding:4px 0;border:1px solid var(--border);border-radius:2px;background:transparent;color:var(--muted);cursor:pointer;text-align:center}}
 .sort-btn.active{{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}}
@@ -314,6 +332,10 @@ body{{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-
   <div class="left-panel">
     <div class="lp-controls">
       <input class="lp-search" type="text" id="search" placeholder="Search all questions…" oninput="filterQuestions(this.value)">
+      <select class="lp-rep-filter" id="rep-filter" onchange="filterByRep(this.value)">
+        <option value="">All Reps</option>
+        {rep_options}
+      </select>
       <div class="lp-sort">
         <button class="sort-btn active" id="btn-calls" onclick="sortBy('calls')">Sort: Calls</button>
         <button class="sort-btn" id="btn-questions" onclick="sortBy('questions')">Sort: Questions</button>
@@ -356,6 +378,7 @@ body{{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-
 let currentCat  = null;
 let currentSort = 'calls';
 let searchQuery = '';
+let currentRep  = '';
 
 function selectCat(idx) {{
   clearSearch();
@@ -370,6 +393,25 @@ function selectCat(idx) {{
 
   document.getElementById('right-inner').scrollTop = 0;
   currentCat = idx;
+  if (currentRep) filterByRep(currentRep);
+}}
+
+function filterByRep(rep) {{
+  currentRep = rep;
+  // Filter category items
+  document.querySelectorAll('.cat-item').forEach(el => {{
+    if (!rep) {{ el.style.display = ''; return; }}
+    const reps = (el.dataset.reps || '').split('|');
+    el.style.display = reps.includes(rep) ? '' : 'none';
+  }});
+  // Filter question rows in the active panel
+  if (currentCat !== null) {{
+    document.querySelectorAll('#panel-' + currentCat + ' .q-row').forEach(row => {{
+      if (!rep) {{ row.classList.remove('hidden'); return; }}
+      const reps = (row.dataset.reps || '').split('|');
+      row.classList.toggle('hidden', !reps.includes(rep));
+    }});
+  }}
 }}
 
 function clearSearch() {{
