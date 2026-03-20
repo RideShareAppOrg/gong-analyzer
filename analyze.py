@@ -1,22 +1,31 @@
 #!/usr/bin/env python3
 """
-Linear Sales — Gong Call Analyzer v5
-======================================
-Architecture:
-  0. Load internal Gong user IDs
-  1. Fetch calls + metadata (trailing 30 days)
+Linear Sales — Gong Call Analyzer
+===================================
+Pipeline:
+  0. Load internal Gong user IDs + build rep name map (id → "First Last")
+  1. Fetch calls + metadata (trailing 30 days), attach rep name via primaryUserId
   2. Fetch transcripts
-  3. Claude (Haiku, parallel) — extract ALL prospect questions from full transcripts
-  4. Claude (Sonnet) — stratified sample → discover categories from data
-  4b. Claude (Sonnet) — generate one-sentence description per category
-  5. Claude (Sonnet, parallel) — classify every question
-  6. Claude (Sonnet, map-reduce) — cluster within each category
-  7. Match clusters to resources (Linear docs + Notion internal)
-  8. Write two-panel interactive HTML report
+  3. Claude Haiku (parallel) — extract prospect questions from transcripts
+  4. Fixed 15-category taxonomy — no LLM discovery, stable across runs
+  5. Claude Sonnet (parallel, temperature=0) — classify every question
+  6. Claude Sonnet (map-reduce) — cluster within each category
+  7a. Fetch Notion pages, validate for content, cache 7 days
+  7b. Fetch + validate Linear docs index, extract content snippets, cache 7 days
+  7c. Claude Sonnet (batched) — match clusters to external docs + internal Notion pages
+  8. render_html.py — generate interactive HTML leaderboard
 
 Checkpointing:
-  extracted_questions.json  — skip step 3 with --use-cache
-  classified_questions.json — skip steps 3-5 with --use-classified-cache
+  extracted_questions.json   — skip steps 1-3 with --use-cache
+  classified_questions.json  — skip steps 1-5 with --use-classified-cache
+
+Caches (auto-refreshed weekly):
+  docs_cache.json    — Linear docs with HTTP validation + content snippets
+  notion_cache.json  — Notion pages filtered to those with real content
+
+Output:
+  results.json      — full pipeline output including resource_map
+  gong_report.html  — rendered leaderboard (also written by render_html.py standalone)
 """
 
 import os, sys, json, re, time, threading, random
