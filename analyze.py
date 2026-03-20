@@ -262,12 +262,18 @@ EXTRACTION_PROMPT = """You are analyzing a sales call transcript for Linear.app 
 
 Lines starting with "Rep:" are the Linear sales rep. Lines starting with "Prospect:" are the customer.
 
-Extract EVERY genuine question the prospect asked about Linear's product. Resolve short fragments using surrounding context.
+Extract EVERY genuine question the prospect asked about Linear's product, pricing, features, or implementation. Resolve short fragments using surrounding context.
 
-INCLUDE: questions about features, capabilities, pricing, migrations, security, comparisons, implementation.
-EXCLUDE: rep questions about the prospect's org, scheduling, small talk, rhetorical tags ("...right?").
+INCLUDE: questions about features, capabilities, pricing, migrations, security, integrations, comparisons, implementation, onboarding.
+EXCLUDE (do not extract these):
+- Meeting logistics ("Is X joining?", "Can you hear me?", "Are we recording?")
+- Personal / social questions ("How are you?", "Did you get my email?")
+- Scheduling ("Can we meet next week?")
+- Internal questions about the prospect's own team
+- Rhetorical tags ("...right?", "...you know?")
+- Anything not directly about Linear's product or business
 
-Rewrite each as a clean standalone sentence. Return ONLY a JSON array of strings, or [] if none.
+Rewrite each extracted question as a clean standalone sentence. Return ONLY a JSON array of strings, or [] if none.
 
 TRANSCRIPT:
 {transcript}"""
@@ -463,6 +469,20 @@ def classify_questions(all_questions, categories, descriptions, client):
     print(f"\n  ✓ Classified {len(classified)} questions:")
     for cat, n in sorted(Counter(q["category"] for q in classified).items(), key=lambda x: -x[1]):
         print(f"    {cat:<50} {n:>4}")
+    # Drop obvious non-product questions (logistics, small talk) that slipped through extraction
+    _NOISE = re.compile(
+        r"^(is|are|was|will|can|did|do|does)\s.{0,60}"
+        r"(joining|join today|on the call|hear me|hearing me|received my|get my email"
+        r"|your feedback|my feedback|see my screen|recording|muted|unmuted)\b",
+        re.IGNORECASE,
+    )
+    before = sum(len(v) for v in classified.values())
+    classified = {cat: [q for q in qs if not _NOISE.search(q["text"])]
+                  for cat, qs in classified.items()}
+    after = sum(len(v) for v in classified.values())
+    if before - after:
+        print(f"  ✓ Filtered {before - after} logistics/noise questions")
+
     with open(CLASSIFIED_CACHE, "w") as f:
         json.dump({"categories": categories, "questions": classified}, f, indent=2)
     print(f"\n  ✓ Saved to {CLASSIFIED_CACHE}")
@@ -633,11 +653,20 @@ NOTION_MIN_CHARS  = 80   # pages with less text than this are considered empty
 
 
 def _notion_page_id(url: str) -> str:
-    """Extract and hyphenate the Notion page ID from a notion.so URL."""
-    raw = url.rstrip("/").split("/")[-1].split("?")[0].replace("-", "")
-    if len(raw) == 32:
+    """Extract and hyphenate the Notion page ID from a notion.so URL.
+
+    Notion URLs look like: /linearapp/Page-Title-Words-2999ef0487a5801e921ad214c84ea68e
+    The 32-char hex ID is always the last hyphen-separated segment.
+    """
+    segment = url.rstrip("/").split("?")[0].split("/")[-1]
+    raw = segment.split("-")[-1]  # last part after hyphens = the ID
+    if len(raw) == 32 and all(c in "0123456789abcdefABCDEF" for c in raw):
         return f"{raw[:8]}-{raw[8:12]}-{raw[12:16]}-{raw[16:20]}-{raw[20:]}"
-    return raw
+    # Fallback: already a UUID with hyphens
+    clean = segment.replace("-", "")
+    if len(clean) == 32:
+        return f"{clean[:8]}-{clean[8:12]}-{clean[12:16]}-{clean[16:20]}-{clean[20:]}"
+    return segment
 
 
 def _notion_page_text(page_id: str, headers: dict) -> str:

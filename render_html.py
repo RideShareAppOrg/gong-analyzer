@@ -150,7 +150,7 @@ def write_html(ranked, total_questions, from_date, to_date,
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Customer Questions Leaderboard — Linear Sales</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {{
   --bg:#f5f3ef; --surface:#fff; --border:#e2ddd6; --ink:#1a1814;
@@ -158,24 +158,24 @@ def write_html(ranked, total_questions, from_date, to_date,
 }}
 *{{box-sizing:border-box;margin:0;padding:0}}
 html,body{{height:100%}}
-body{{background:var(--bg);color:var(--ink);font-family:'Lora',serif;font-size:15px;line-height:1.65;display:flex;flex-direction:column;height:100vh;overflow:hidden}}
+body{{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:15px;line-height:1.65;display:flex;flex-direction:column;height:100vh;overflow:hidden}}
 
 /* ── Masthead ── */
 .masthead{{background:var(--ink);color:#f5f3ef;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}}
 .masthead-left .eyebrow{{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:#8c8680;margin-bottom:4px}}
-.masthead-left .title{{font-family:'Syne',sans-serif;font-weight:800;font-size:1.75rem;letter-spacing:-.03em;line-height:1}}
+.masthead-left .title{{font-family:'Inter',sans-serif;font-weight:600;font-size:3rem;letter-spacing:-.01em;line-height:1.1}}
 .masthead-left .title em{{font-style:normal;color:#5E6AD2}}
 .masthead-right{{display:flex;flex-direction:column;align-items:flex-end;gap:8px}}
 .date-tiles{{display:flex;align-items:center;gap:6px}}
 .dt-tile{{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:5px;padding:8px 14px;text-align:center;cursor:pointer;transition:background .15s,border-color .15s,transform .1s}}
 .dt-tile:hover{{background:rgba(94,106,210,0.18);border-color:rgba(94,106,210,0.55);transform:translateY(-1px)}}
 .dt-label{{display:block;font-family:'IBM Plex Mono',monospace;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:#9c9890;margin-bottom:4px}}
-.dt-date{{display:block;font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;color:#f5f3ef;line-height:1;letter-spacing:-.02em}}
+.dt-date{{display:block;font-family:'Inter',sans-serif;font-weight:800;font-size:1.05rem;color:#f5f3ef;line-height:1;letter-spacing:-.02em}}
 .dt-year{{display:block;font-family:'IBM Plex Mono',monospace;font-size:.54rem;color:#9c9890;margin-top:3px}}
 .dt-arrow{{color:#5E6AD2;font-size:.85rem;flex-shrink:0;margin:0 2px}}
 .dt-duration{{background:rgba(94,106,210,0.2);border:1px solid rgba(94,106,210,0.35);border-radius:3px;padding:3px 9px;font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:#a8aef0;letter-spacing:.04em}}
 .masthead-meta{{text-align:right;font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:#5a5650;line-height:1.8}}
-.masthead-meta .stat{{color:#c8c4be;font-family:'Syne',sans-serif;font-weight:600;font-size:.82rem;display:block}}
+.masthead-meta .stat{{color:#c8c4be;font-family:'Inter',sans-serif;font-weight:600;font-size:.82rem;display:block}}
 
 /* ── App shell ── */
 .app{{display:flex;flex:1;overflow:hidden}}
@@ -199,9 +199,9 @@ body{{background:var(--bg);color:var(--ink);font-family:'Lora',serif;font-size:1
 .ci-rank{{font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:500;color:var(--muted);min-width:26px;flex-shrink:0}}
 .cat-item.active .ci-rank{{color:var(--accent)}}
 .ci-emerging-badge{{font-family:'IBM Plex Mono',monospace;font-size:.58rem;background:#ece9e3;color:var(--muted);padding:1px 5px;border-radius:2px;text-transform:uppercase;letter-spacing:.06em;flex-shrink:0}}
-.ci-name{{font-family:'Syne',sans-serif;font-weight:600;font-size:.88rem;flex:1;min-width:0;line-height:1.3}}
+.ci-name{{font-family:'Inter',sans-serif;font-weight:600;font-size:.88rem;flex:1;min-width:0;line-height:1.3}}
 .cat-item.active .ci-name{{color:var(--accent)}}
-.ci-score{{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--ink);flex-shrink:0;line-height:1;text-align:right}}
+.ci-score{{font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:var(--ink);flex-shrink:0;line-height:1;text-align:right}}
 .cat-item.active .ci-score{{color:var(--accent)}}
 .ci-score-sub{{display:block;font-family:'IBM Plex Mono',monospace;font-size:.55rem;font-weight:400;color:var(--muted);text-align:right;margin-top:2px}}
 .cat-item.active .ci-score-sub{{color:var(--accent);opacity:.7}}
@@ -220,7 +220,7 @@ body{{background:var(--bg);color:var(--ink);font-family:'Lora',serif;font-size:1
 /* ── Question panel ── */
 .q-panel{{padding:0}}
 .qp-header{{padding:22px 32px 16px;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:10}}
-.qp-title{{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:-.02em;color:var(--ink);margin-bottom:4px}}
+.qp-title{{font-family:'Inter',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:-.02em;color:var(--ink);margin-bottom:4px}}
 .qp-meta{{font-family:'IBM Plex Mono',monospace;font-size:.67rem;color:var(--muted)}}
 .qp-meta strong{{color:var(--ink);font-weight:600}}
 .qp-list{{padding:8px 32px 40px}}
@@ -234,7 +234,7 @@ body{{background:var(--bg);color:var(--ink);font-family:'Lora',serif;font-size:1
 .q-freq{{font-family:'IBM Plex Mono',monospace;font-size:.88rem;font-weight:700;color:var(--accent);background:var(--accent-bg);padding:5px 7px;border-radius:3px;text-align:center;line-height:1.2;min-width:44px}}
 .q-freq-label{{font-size:.55rem;font-weight:400;color:var(--muted)}}
 .q-main{{flex:1;min-width:0}}
-.q-label{{font-family:'Syne',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);line-height:1.45;margin-bottom:7px}}
+.q-label{{font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);line-height:1.45;margin-bottom:7px}}
 
 /* ── Global search results ── */
 .sr-row{{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--border);align-items:flex-start}}
