@@ -181,7 +181,7 @@ body{{background:var(--bg);color:var(--ink);font-family:'Lora',serif;font-size:1
 .app{{display:flex;flex:1;overflow:hidden}}
 
 /* ── Left panel ── */
-.left-panel{{width:340px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}}
+.left-panel{{width:500px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}}
 .lp-controls{{padding:14px 16px;border-bottom:1px solid var(--border);flex-shrink:0}}
 .lp-search{{width:100%;padding:7px 11px;border:1px solid var(--border);border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;background:var(--bg);color:var(--ink);outline:none}}
 .lp-search:focus{{border-color:var(--accent)}}
