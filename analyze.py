@@ -627,12 +627,61 @@ def cluster_all_categories(classified, categories, client):
 # STEP 7a — Fetch Notion pages
 # ═══════════════════════════════════════════════════════════════════════════════
 
+NOTION_CACHE_PATH = "notion_cache.json"
+NOTION_CACHE_DAYS = 7
+NOTION_MIN_CHARS  = 80   # pages with less text than this are considered empty
+
+
+def _notion_page_id(url: str) -> str:
+    """Extract and hyphenate the Notion page ID from a notion.so URL."""
+    raw = url.rstrip("/").split("/")[-1].split("?")[0].replace("-", "")
+    if len(raw) == 32:
+        return f"{raw[:8]}-{raw[8:12]}-{raw[12:16]}-{raw[16:20]}-{raw[20:]}"
+    return raw
+
+
+def _notion_page_text(page_id: str, headers: dict) -> str:
+    """Fetch first-level blocks and extract plain text (max 300 chars)."""
+    TEXT_TYPES = {"paragraph", "heading_1", "heading_2", "heading_3",
+                  "bulleted_list_item", "numbered_list_item", "quote", "callout"}
+    try:
+        resp = requests.get(f"https://api.notion.com/v1/blocks/{page_id}/children",
+                            headers=headers, timeout=15)
+        if resp.status_code != 200:
+            return ""
+        parts = []
+        for block in resp.json().get("results", []):
+            btype = block.get("type", "")
+            if btype in TEXT_TYPES:
+                rich = block.get(btype, {}).get("rich_text", [])
+                parts.append("".join(r.get("plain_text", "") for r in rich))
+        return " ".join(p for p in parts if p)[:300]
+    except Exception:
+        return ""
+
+
 def fetch_notion_pages() -> list[dict]:
     if not NOTION_TOKEN or not NOTION_DATABASE_ID:
         return []
     print(f"\n{'='*60}\nSTEP 7a — Fetching Notion pages\n{'='*60}")
-    headers = {"Authorization": f"Bearer {NOTION_TOKEN}", "Notion-Version": "2022-06-28", "Content-Type": "application/json"}
-    pages, start_cursor = [], None
+    headers = {"Authorization": f"Bearer {NOTION_TOKEN}", "Notion-Version": "2022-06-28",
+               "Content-Type": "application/json"}
+
+    # ── Try cache ────────────────────────────────────────────────────────────
+    if os.path.exists(NOTION_CACHE_PATH):
+        try:
+            with open(NOTION_CACHE_PATH) as f:
+                cached = json.load(f)
+            age_days = (time.time() - cached.get("_ts", 0)) / 86400
+            if age_days < NOTION_CACHE_DAYS:
+                pages = cached.get("pages", [])
+                print(f"  ✓ Loaded {len(pages)} Notion pages from cache ({age_days:.1f}d old)")
+                return pages
+        except Exception:
+            pass
+
+    # ── Fetch page list from database ─────────────────────────────────────
+    raw_pages, start_cursor = [], None
     while True:
         body = {"page_size": 100}
         if start_cursor:
@@ -651,11 +700,33 @@ def fetch_notion_pages() -> list[dict]:
                     break
             url = result.get("url", "")
             if title and url:
-                pages.append({"title": title, "url": url})
+                raw_pages.append({"title": title, "url": url})
         if not data.get("has_more"):
             break
         start_cursor = data.get("next_cursor")
-    print(f"  ✓ Fetched {len(pages)} Notion pages")
+
+    print(f"  Validating {len(raw_pages)} pages for content...", flush=True)
+
+    # ── Fetch block content in parallel, filter empty pages ───────────────
+    def _validate(page: dict) -> dict | None:
+        pid  = _notion_page_id(page["url"])
+        text = _notion_page_text(pid, headers)
+        if len(text) >= NOTION_MIN_CHARS:
+            return {**page, "snippet": text}
+        return None
+
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        results = list(pool.map(_validate, raw_pages))
+
+    pages = [r for r in results if r is not None]
+    print(f"  ✓ {len(pages)}/{len(raw_pages)} Notion pages have content")
+
+    try:
+        with open(NOTION_CACHE_PATH, "w") as f:
+            json.dump({"_ts": time.time(), "pages": pages}, f)
+    except Exception:
+        pass
+
     return pages
 
 
@@ -785,7 +856,10 @@ def match_resources_to_clusters(ranked, notion_pages, client):
         f"{i}. {d['title']} | {d['url']} | {d['snippet'][:200]}"
         for i, d in enumerate(valid_docs)
     )
-    internal_text = "\n".join(f"{i}. {p['title']}" for i, p in enumerate(notion_pages))
+    internal_text = "\n".join(
+        f"{i}. {p['title']} — {p.get('snippet', '')[:150]}"
+        for i, p in enumerate(notion_pages)
+    )
 
     # ── Batch questions to stay within context limits ────────────────────────
     batches = [
