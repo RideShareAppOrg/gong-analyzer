@@ -69,7 +69,7 @@ def write_html(ranked, total_questions, from_date, to_date,
             f'    {rank_label}{emerging_badge}\n'
             f'    <span class="ci-name">{esc(r["category"])}</span>\n'
             f'    <div class="ci-score"><span class="ci-score-num">{r["total_calls"]}</span>'
-            f'<span class="ci-score-sub">calls</span></div>\n'
+            f'<span class="ci-score-sub">unique calls</span></div>\n'
             f'  </div>\n'
             f'  <div class="ci-bar-track"><div class="ci-bar-fill" style="width:{pct}%"></div></div>\n'
             f'</div>\n'
@@ -87,11 +87,10 @@ def write_html(ranked, total_questions, from_date, to_date,
                 f'<div class="sr-row hidden"'
                 f' data-text="{esc(cl["canonical"].lower())} {esc(r["category"].lower())}"'
                 f' data-cat="{esc(r["category"])}">\n'
-                f'  <div class="sr-left"><span class="q-freq">{cl["call_count"]}'
-                f'<br><span class="q-freq-label">call{sr_calls_s}</span></span></div>\n'
                 f'  <div class="sr-main">\n'
                 f'    <span class="sr-cat">{cat_name}</span>\n'
                 f'    <div class="q-label">{esc(cl["canonical"])}</div>\n'
+                f'    <div class="q-call-meta">asked in <span class="q-freq">{cl["call_count"]}</span> call{sr_calls_s}</div>\n'
                 f'    {"<div class=\"q-pills\">" + pills + "</div>" if pills else ""}\n'
                 f'  </div>\n'
                 f'</div>\n'
@@ -116,26 +115,29 @@ def write_html(ranked, total_questions, from_date, to_date,
                 link    = (f'<a href="{esc(url)}" target="_blank" class="src-link">{title}</a>'
                            if url else f'<span class="src-plain">{title}</span>')
                 excerpt_html = f'<div class="src-excerpt">"{excerpt}"</div>' if excerpt else ""
+                src_rep = esc(s.get("rep_name", ""))
                 src_items += (
-                    f'<div class="src-item">'
+                    f'<div class="src-item" data-rep="{src_rep}">'
                     f'<div class="src-meta"><span class="src-date">{date}</span>{link}</div>'
                     f'{excerpt_html}</div>\n'
                 )
 
             src_s      = "s" if n_src != 1 else ""
+            from collections import Counter as _Counter
+            rep_counts = _Counter(s.get("rep_name","") for s in cl.get("sources",[]) if s.get("rep_name",""))
+            rep_counts_attr = esc("|".join(f"{k}:{v}" for k,v in rep_counts.items()))
+            cl_reps = esc("|".join(sorted(rep_counts.keys())))
             src_toggle = (
                 f'<details class="src-toggle">'
-                f'<summary>{n_src} call{src_s}</summary>'
+                f'<summary>asked in <span class="q-freq">{cl["call_count"]}</span> call{calls_s}</summary>'
                 f'<div class="src-list">{src_items}</div></details>'
-            ) if src_items else ""
-
-            cl_reps = esc("|".join(sorted({s.get("rep_name","") for s in cl.get("sources",[]) if s.get("rep_name","")})))
+            ) if src_items else (
+                f'<div class="q-call-meta">asked in <span class="q-freq">{cl["call_count"]}</span> call{calls_s}</div>'
+            )
             questions_html += (
-                f'<div class="q-row" data-text="{esc(cl["canonical"].lower())}" data-reps="{cl_reps}">\n'
+                f'<div class="q-row" data-text="{esc(cl["canonical"].lower())}" data-reps="{cl_reps}" data-rep-counts="{rep_counts_attr}" data-total-calls="{cl["call_count"]}">\n'
                 f'  <div class="q-left">\n'
                 f'    <span class="q-rank">#{q_idx+1}</span>\n'
-                f'    <span class="q-freq">{cl["call_count"]}'
-                f'<br><span class="q-freq-label">call{calls_s}</span></span>\n'
                 f'  </div>\n'
                 f'  <div class="q-main">\n'
                 f'    <div class="q-label">{esc(cl["canonical"])}</div>\n'
@@ -150,7 +152,7 @@ def write_html(ranked, total_questions, from_date, to_date,
             f'<div class="q-panel" id="panel-{i}" style="display:none">\n'
             f'  <div class="qp-header">\n'
             f'    <div class="qp-title">{esc(r["category"])}</div>\n'
-            f'    <div class="qp-meta"><strong>{r["total_calls"]} calls</strong> raised this topic'
+            f'    <div class="qp-meta"><strong>{r["total_calls"]} unique calls</strong> raised this topic'
             f' &middot; {r["total"]} questions asked &middot; {n_clusters} clusters</div>\n'
             f'  </div>\n'
             f'  <div class="qp-list" id="qplist-{i}">{questions_html}</div>\n'
@@ -249,8 +251,8 @@ body{{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-
 .q-row.hidden{{display:none}}
 .q-left{{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:52px;padding-top:2px;flex-shrink:0}}
 .q-rank{{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted)}}
-.q-freq{{font-family:'IBM Plex Mono',monospace;font-size:.88rem;font-weight:700;color:var(--accent);background:var(--accent-bg);padding:5px 7px;border-radius:3px;text-align:center;line-height:1.2;min-width:44px}}
-.q-freq-label{{font-size:.55rem;font-weight:400;color:var(--muted)}}
+.q-call-meta{{font-size:.72rem;color:var(--muted);margin:2px 0 4px;font-family:'IBM Plex Mono',monospace}}
+.q-freq{{font-weight:600;color:var(--ink)}}
 .q-main{{flex:1;min-width:0}}
 .q-label{{font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);line-height:1.45;margin-bottom:7px}}
 
@@ -398,20 +400,95 @@ function selectCat(idx) {{
 
 function filterByRep(rep) {{
   currentRep = rep;
-  // Filter category items
-  document.querySelectorAll('.cat-item').forEach(el => {{
-    if (!rep) {{ el.style.display = ''; return; }}
-    const reps = (el.dataset.reps || '').split('|');
-    el.style.display = reps.includes(rep) ? '' : 'none';
-  }});
-  // Filter question rows in the active panel
-  if (currentCat !== null) {{
-    document.querySelectorAll('#panel-' + currentCat + ' .q-row').forEach(row => {{
-      if (!rep) {{ row.classList.remove('hidden'); return; }}
-      const reps = (row.dataset.reps || '').split('|');
-      row.classList.toggle('hidden', !reps.includes(rep));
+
+  // Filter source call items and update the summary count
+  document.querySelectorAll('.src-toggle').forEach(toggle => {{
+    const items = toggle.querySelectorAll('.src-item');
+    items.forEach(item => {{
+      if (!rep) {{ item.style.display = ''; return; }}
+      item.style.display = (item.dataset.rep === rep) ? '' : 'none';
     }});
+    const visible = rep
+      ? [...items].filter(i => i.dataset.rep === rep).length
+      : items.length;
+    const summary = toggle.querySelector('summary');
+    if (summary) summary.innerHTML = 'asked in <span class="q-freq">' + visible + '</span> ' + (visible === 1 ? 'call' : 'calls');
+  }});
+
+  // Update every question row across all panels
+  document.querySelectorAll('.q-row').forEach(row => {{
+    const reps = (row.dataset.reps || '').split('|');
+    const visible = !rep || reps.includes(rep);
+    row.classList.toggle('hidden', !visible);
+
+    // Update the call count badge to reflect this rep's calls
+    const badge = row.querySelector('.q-freq');
+    if (badge) {{
+      if (!rep) {{
+        badge.childNodes[0].textContent = row.dataset.totalCalls;
+      }} else {{
+        const counts = Object.fromEntries(
+          (row.dataset.repCounts || '').split('|').filter(Boolean)
+            .map(p => {{ const [k,v] = p.split(':'); return [k, parseInt(v)]; }})
+        );
+        badge.childNodes[0].textContent = counts[rep] || 0;
+      }}
+    }}
+  }});
+
+  // Update category items: hide if no visible rows, update score, re-sort
+  const catList = document.getElementById('cat-list');
+  const allItems = Array.from(catList.querySelectorAll('.cat-item'));
+  const emerging = allItems.filter(el => el.classList.contains('cat-item-emerging'));
+  const main     = allItems.filter(el => !el.classList.contains('cat-item-emerging'));
+
+  main.forEach(el => {{
+    const idx = el.dataset.cat;
+    if (!rep) {{
+      el.style.display = '';
+      const num = el.querySelector('.ci-score-num');
+      if (num) num.textContent = currentSort === 'calls' ? el.dataset.calls : el.dataset.questions;
+      return;
+    }}
+    const reps = (el.dataset.reps || '').split('|');
+    const hasRep = reps.includes(rep);
+    el.style.display = hasRep ? '' : 'none';
+    if (hasRep) {{
+      const visibleRows = document.querySelectorAll('#panel-' + idx + ' .q-row:not(.hidden)');
+      const num = el.querySelector('.ci-score-num');
+      if (num) num.textContent = visibleRows.length;
+    }}
+  }});
+
+  // Re-sort visible categories by their updated score
+  if (rep) {{
+    main.sort((a, b) => {{
+      if (a.style.display === 'none') return 1;
+      if (b.style.display === 'none') return -1;
+      const aVal = parseInt(a.querySelector('.ci-score-num')?.textContent || 0);
+      const bVal = parseInt(b.querySelector('.ci-score-num')?.textContent || 0);
+      return bVal - aVal;
+    }});
+    main.forEach((el, i) => {{
+      const rank = el.querySelector('.ci-rank');
+      if (rank) rank.textContent = '#' + (i + 1);
+    }});
+  }} else {{
+    // Restore original sort
+    sortBy(currentSort);
+    return;
   }}
+
+  // Update bar widths
+  const maxVal = Math.max(...main.filter(el => el.style.display !== 'none')
+    .map(el => parseInt(el.querySelector('.ci-score-num')?.textContent || 0)));
+  main.forEach(el => {{
+    const val  = parseInt(el.querySelector('.ci-score-num')?.textContent || 0);
+    const fill = el.querySelector('.ci-bar-fill');
+    if (fill) fill.style.width = maxVal > 0 ? Math.round((val / maxVal) * 100) + '%' : '0%';
+  }});
+
+  [...main, ...emerging].forEach(el => catList.appendChild(el));
 }}
 
 function clearSearch() {{
@@ -490,7 +567,7 @@ function sortBy(col) {{
     const num = el.querySelector('.ci-score-num');
     if (num) num.textContent = val;
     const sub = el.querySelector('.ci-score-sub');
-    if (sub) sub.textContent = col === 'calls' ? 'calls' : 'questions';
+    if (sub) sub.textContent = col === 'calls' ? 'unique calls' : 'questions';
   }});
 
   document.getElementById('btn-calls').classList.toggle('active', col === 'calls');
