@@ -971,6 +971,77 @@ def match_resources_to_clusters(ranked, notion_pages, client):
 # MAIN
 # ═══════════════════════════════════════════════════════════════════════════════
 
+SNAPSHOTS_FILE = "snapshots.json"
+MAX_SNAPSHOTS  = 52  # ~1 year of weekly runs
+
+
+def _save_snapshot(ranked: list, from_date: str, to_date: str) -> dict:
+    """Append a snapshot of the current run to snapshots.json.
+    Returns a deltas dict {category_name: {call_delta, rank_delta}} comparing
+    the two most recent snapshots, or {} if this is the first snapshot.
+    The snapshot schema is comparison-agnostic — any two snapshots can be diffed.
+    """
+    snapshot = {
+        "id":           to_date[:10],
+        "generated_at": NOW.isoformat(),
+        "from_date":    from_date[:10],
+        "to_date":      to_date[:10],
+        "categories": [
+            {
+                "name":            r["category"],
+                "rank":            i + 1,
+                "total_calls":     r["total_calls"],
+                "total_questions": r["total"],
+                "clusters": [
+                    {"canonical": cl["canonical"], "call_count": cl["call_count"], "rank": j + 1}
+                    for j, cl in enumerate(r.get("clusters", []))
+                ],
+            }
+            for i, r in enumerate(ranked)
+        ],
+    }
+
+    # Load existing snapshots
+    if os.path.exists(SNAPSHOTS_FILE):
+        with open(SNAPSHOTS_FILE) as f:
+            store = json.load(f)
+    else:
+        store = {"snapshots": []}
+
+    snapshots = store.get("snapshots", [])
+
+    # Compute deltas against most recent snapshot before appending
+    deltas = {}
+    if snapshots:
+        prev = snapshots[-1]
+        prev_by_name = {c["name"]: c for c in prev["categories"]}
+        for cat in snapshot["categories"]:
+            name = cat["name"]
+            if name in prev_by_name:
+                p = prev_by_name[name]
+                deltas[name] = {
+                    "call_delta": cat["total_calls"] - p["total_calls"],
+                    "rank_delta": p["rank"] - cat["rank"],  # positive = moved up
+                }
+            else:
+                deltas[name] = {"call_delta": None, "rank_delta": None}  # new category
+
+    # Append and trim
+    snapshots.append(snapshot)
+    store["snapshots"] = snapshots[-MAX_SNAPSHOTS:]
+
+    with open(SNAPSHOTS_FILE, "w") as f:
+        json.dump(store, f, indent=2)
+    compare_period = None
+    if len(snapshots) >= 2:
+        prev_snap      = snapshots[-2]
+        compare_period = {"from": prev_snap["from_date"], "to": prev_snap["to_date"]}
+        print(f"  ✓ Snapshot saved ({snapshot['id']} vs {prev_snap['id']})")
+    else:
+        print(f"  ✓ Snapshot saved ({snapshot['id']}, first snapshot — no delta yet)")
+    return deltas, compare_period
+
+
 def main():
     use_cache            = "--use-cache" in sys.argv
     use_classified_cache = "--use-classified-cache" in sys.argv
@@ -1027,8 +1098,12 @@ def main():
                    "resource_map": resource_map}, f, indent=2)
     print("\n  ✓ Saved results.json")
 
+    deltas, compare_period = _save_snapshot(ranked, FROM_DATE, TO_DATE)
+
     from render_html import write_html as _write_html
-    path = _write_html(ranked, total_questions, FROM_DATE, TO_DATE, resource_map=resource_map)
+    path = _write_html(ranked, total_questions, FROM_DATE, TO_DATE,
+                       resource_map=resource_map, deltas=deltas,
+                       compare_period=compare_period)
     print(f"\n{'='*60}\n  ✅  Done!  open {path}\n{'='*60}\n")
 
 

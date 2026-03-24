@@ -10,3 +10,8 @@ files.zip
 extracted_questions.json
 classified_questions.json
 notion_cache.json
+
+# One-off research scripts + output
+diag_gong_crm.py
+triage_framing.py
+triage_framing_context.txt

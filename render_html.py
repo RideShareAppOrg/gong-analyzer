@@ -25,8 +25,30 @@ def _make_pills(ext_page, int_page):
 
 
 def write_html(ranked, total_questions, from_date, to_date,
-               resource_map=None, output_path="gong_report.html"):
-    resource_map = resource_map or {}
+               resource_map=None, deltas=None, compare_period=None,
+               output_path="gong_report.html"):
+    resource_map  = resource_map or {}
+    deltas        = deltas or {}
+
+    # Build compare label: "vs Feb 19 – Mar 13" for the toggle button
+    if deltas and compare_period:
+        from datetime import datetime as _dt2
+        _cf = _dt2.strptime(compare_period["from"][:10], "%Y-%m-%d")
+        _ct = _dt2.strptime(compare_period["to"][:10], "%Y-%m-%d")
+        _same_year = _cf.year == _ct.year
+        _cf_str = _cf.strftime("%b %-d")
+        _ct_str = _ct.strftime("%b %-d") + ("" if _same_year else f" {_ct.year}")
+        compare_label     = f"vs {_cf_str} – {_ct_str}"
+        delta_toggle_btn  = (f'<button class="delta-toggle-btn" id="delta-toggle"'
+                             f' data-on-label="{compare_label}" data-off-label="&#916; Changes"'
+                             f' onclick="toggleDeltas()">&#916; Changes</button>')
+    elif deltas:
+        delta_toggle_btn  = ('<button class="delta-toggle-btn" id="delta-toggle"'
+                             ' data-on-label="&#916; Changes" data-off-label="&#916; Changes"'
+                             ' onclick="toggleDeltas()">&#916; Changes</button>')
+    else:
+        delta_toggle_btn  = ""
+
     now_str   = datetime.now().strftime("%B %d, %Y at %H:%M")
     max_calls = max((r["total_calls"] for r in ranked), default=1)
 
@@ -61,6 +83,18 @@ def write_html(ranked, total_questions, from_date, to_date,
             s.get("rep_name", "") for cl in r.get("clusters", [])
             for s in cl.get("sources", []) if s.get("rep_name", "")
         })))
+        d          = deltas.get(r["category"], {})
+        call_delta = d.get("call_delta")
+        if call_delta is None or call_delta == 0:
+            delta_badge = ""
+        else:
+            prev_calls = r["total_calls"] - call_delta
+            pct        = round((call_delta / prev_calls) * 100) if prev_calls > 0 else 0
+            if call_delta > 0:
+                delta_badge = f'<span class="ci-delta ci-delta-up">↑{pct}%</span>'
+            else:
+                delta_badge = f'<span class="ci-delta ci-delta-down">↓{abs(pct)}%</span>'
+
         cat_items += (
             f'<div class="cat-item{"  cat-item-emerging" if is_emerging else ""}"'
             f' data-cat="{i}" data-calls="{r["total_calls"]}" data-questions="{r["total"]}"'
@@ -68,8 +102,10 @@ def write_html(ranked, total_questions, from_date, to_date,
             f'  <div class="ci-header">\n'
             f'    {rank_label}{emerging_badge}\n'
             f'    <span class="ci-name">{esc(r["category"])}</span>\n'
-            f'    <div class="ci-score"><span class="ci-score-num">{r["total_calls"]}</span>'
-            f'<span class="ci-score-sub">unique calls</span></div>\n'
+            f'    <div class="ci-score">'
+            f'<span class="ci-score-num">{r["total_calls"]}</span>'
+            f'<span class="ci-score-sub">unique calls</span>'
+            f'{delta_badge}</div>\n'
             f'  </div>\n'
             f'  <div class="ci-bar-track"><div class="ci-bar-fill" style="width:{pct}%"></div></div>\n'
             f'</div>\n'
@@ -80,8 +116,6 @@ def write_html(ranked, total_questions, from_date, to_date,
     for r in ranked:
         cat_name = esc(r["category"])
         for cl in r.get("clusters", []):
-            resources = resource_map.get(cl["canonical"], {})
-            pills     = _make_pills(resources.get("external"), resources.get("internal"))
             sr_calls_s = "s" if cl["call_count"] != 1 else ""
             search_rows += (
                 f'<div class="sr-row hidden"'
@@ -91,7 +125,6 @@ def write_html(ranked, total_questions, from_date, to_date,
                 f'    <span class="sr-cat">{cat_name}</span>\n'
                 f'    <div class="q-label">{esc(cl["canonical"])}</div>\n'
                 f'    <div class="q-call-meta">asked in <span class="q-freq">{cl["call_count"]}</span> call{sr_calls_s}</div>\n'
-                f'    {"<div class=\"q-pills\">" + pills + "</div>" if pills else ""}\n'
                 f'  </div>\n'
                 f'</div>\n'
             )
@@ -100,9 +133,28 @@ def write_html(ranked, total_questions, from_date, to_date,
     question_panels = ""
     for i, r in enumerate(ranked):
         questions_html = ""
+
+        # Collect unique resources across all clusters for the Topic Library
+        seen_urls  = set()
+        ext_pills  = ""
+        int_pills  = ""
+        for cl in r.get("clusters", []):
+            res = resource_map.get(cl["canonical"], {})
+            for key, pill_cls, container in (
+                ("external", "pill pill-ext", "ext"),
+                ("internal", "pill pill-int", "int"),
+            ):
+                page = res.get(key)
+                if page and page.get("url") and page["url"] not in seen_urls:
+                    seen_urls.add(page["url"])
+                    t = page["title"][:50] + ("…" if len(page["title"]) > 50 else "")
+                    pill = f'<a href="{esc(page["url"])}" target="_blank" class="{pill_cls}">{esc(t)}</a>'
+                    if container == "ext":
+                        ext_pills += pill
+                    else:
+                        int_pills += pill
+
         for q_idx, cl in enumerate(r.get("clusters", [])):
-            resources = resource_map.get(cl["canonical"], {})
-            pills     = _make_pills(resources.get("external"), resources.get("internal"))
             n_src     = len(cl.get("sources", []))
             calls_s   = "s" if cl["call_count"] != 1 else ""
 
@@ -141,19 +193,37 @@ def write_html(ranked, total_questions, from_date, to_date,
                 f'  </div>\n'
                 f'  <div class="q-main">\n'
                 f'    <div class="q-label">{esc(cl["canonical"])}</div>\n'
-                f'    {"<div class=\"q-pills\">" + pills + "</div>" if pills else ""}\n'
                 f'    {src_toggle}\n'
                 f'  </div>\n'
                 f'</div>\n'
             )
 
-        n_clusters = len(r.get("clusters", []))
+        n_clusters  = len(r.get("clusters", []))
+        n_ext       = ext_pills.count('<a ')
+        n_int       = int_pills.count('<a ')
+        ext_row     = (f'<div class="tl-row">'
+                       f'<span class="tl-label">Docs</span>'
+                       f'<div class="tl-pills">{ext_pills}</div>'
+                       f'</div>') if ext_pills else ""
+        int_row     = (f'<div class="tl-row">'
+                       f'<span class="tl-label">Plays</span>'
+                       f'<div class="tl-pills">{int_pills}</div>'
+                       f'</div>') if int_pills else ""
+        counts      = " &middot; ".join(filter(None, [
+            f"{n_ext} doc{'s' if n_ext != 1 else ''}" if n_ext else "",
+            f"{n_int} playbook{'s' if n_int != 1 else ''}" if n_int else "",
+        ]))
+        topic_lib   = (f'<details class="topic-library">'
+                       f'<summary class="tl-summary">Resources &middot; {counts}</summary>'
+                       f'<div class="tl-body">{ext_row}{int_row}</div>'
+                       f'</details>') if (ext_row or int_row) else ""
         question_panels += (
             f'<div class="q-panel" id="panel-{i}" style="display:none">\n'
             f'  <div class="qp-header">\n'
             f'    <div class="qp-title">{esc(r["category"])}</div>\n'
             f'    <div class="qp-meta"><strong>{r["total_calls"]} unique calls</strong> raised this topic'
             f' &middot; {r["total"]} questions asked &middot; {n_clusters} clusters</div>\n'
+            f'    {topic_lib}\n'
             f'  </div>\n'
             f'  <div class="qp-list" id="qplist-{i}">{questions_html}</div>\n'
             f'</div>\n'
@@ -205,9 +275,11 @@ body{{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-
 .lp-search:focus{{border-color:var(--accent)}}
 .lp-rep-filter{{width:100%;margin-top:8px;padding:7px 11px;border:1px solid var(--border);border-radius:3px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;background:var(--bg);color:var(--ink);outline:none;cursor:pointer}}
 .lp-rep-filter:focus{{border-color:var(--accent)}}
-.lp-sort{{display:flex;gap:6px;margin-top:8px}}
-.sort-btn{{flex:1;font-family:'IBM Plex Mono',monospace;font-size:.62rem;padding:4px 0;border:1px solid var(--border);border-radius:2px;background:transparent;color:var(--muted);cursor:pointer;text-align:center}}
-.sort-btn.active{{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}}
+.lp-sort{{display:flex;gap:6px;margin-top:8px;align-items:center}}
+.sort-select{{flex:1;font-family:'IBM Plex Mono',monospace;font-size:.62rem;padding:4px 6px;border:1px solid var(--border);border-radius:2px;background:transparent;color:var(--muted);cursor:pointer;appearance:none;-webkit-appearance:none}}
+.sort-select:focus{{outline:none;border-color:var(--accent);color:var(--accent)}}
+.delta-toggle-btn{{font-family:'IBM Plex Mono',monospace;font-size:.62rem;padding:4px 8px;border:1px solid var(--border);border-radius:2px;background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap}}
+.delta-toggle-btn.active{{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}}
 .cat-list{{flex:1;overflow-y:auto;padding:6px 0}}
 
 /* ── Category items — leaderboard style ── */
@@ -225,6 +297,10 @@ body{{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-
 .cat-item.active .ci-score{{color:var(--accent)}}
 .ci-score-sub{{display:block;font-family:'IBM Plex Mono',monospace;font-size:.55rem;font-weight:400;color:var(--muted);text-align:right;margin-top:2px}}
 .cat-item.active .ci-score-sub{{color:var(--accent);opacity:.7}}
+.ci-delta{{display:none;font-family:'IBM Plex Mono',monospace;font-size:.6rem;font-weight:700;text-align:right;margin-top:3px}}
+.deltas-visible .ci-delta{{display:block}}
+.ci-delta-up{{color:#22c55e}}
+.ci-delta-down{{color:#f97316}}
 .ci-bar-track{{height:7px;background:#ede9e4;border-radius:4px}}
 .ci-bar-fill{{height:7px;background:#cac8f0;border-radius:4px;transition:width .35s ease,background .15s}}
 .cat-item.active .ci-bar-fill{{background:var(--accent)}}
@@ -243,6 +319,15 @@ body{{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-
 .qp-title{{font-family:'Inter',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:-.02em;color:var(--ink);margin-bottom:4px}}
 .qp-meta{{font-family:'IBM Plex Mono',monospace;font-size:.67rem;color:var(--muted)}}
 .qp-meta strong{{color:var(--ink);font-weight:600}}
+.topic-library{{margin-top:10px;border-top:1px solid var(--border);padding-top:8px}}
+.tl-summary{{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);user-select:none;padding:2px 0}}
+.tl-summary::-webkit-details-marker{{display:none}}
+.tl-summary::before{{content:'▶';font-size:.42rem;transition:transform .15s}}
+.topic-library[open] .tl-summary::before{{transform:rotate(90deg)}}
+.tl-body{{display:flex;flex-direction:column;gap:8px;margin-top:10px}}
+.tl-row{{display:flex;align-items:flex-start;gap:8px}}
+.tl-label{{font-family:'IBM Plex Mono',monospace;font-size:.55rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;padding-top:3px;flex-shrink:0;width:32px}}
+.tl-pills{{display:flex;flex-wrap:wrap;gap:5px}}
 .qp-list{{padding:8px 32px 40px}}
 
 /* ── Question rows ── */
@@ -339,8 +424,11 @@ body{{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-
         {rep_options}
       </select>
       <div class="lp-sort">
-        <button class="sort-btn active" id="btn-calls" onclick="sortBy('calls')">Sort: Calls</button>
-        <button class="sort-btn" id="btn-questions" onclick="sortBy('questions')">Sort: Questions</button>
+        <select class="sort-select" id="sort-select" onchange="sortBy(this.value)">
+          <option value="calls">Sort: Calls</option>
+          <option value="questions">Sort: Questions</option>
+        </select>
+        {delta_toggle_btn}
       </div>
     </div>
     <div class="cat-list" id="cat-list">
@@ -570,8 +658,18 @@ function sortBy(col) {{
     if (sub) sub.textContent = col === 'calls' ? 'unique calls' : 'questions';
   }});
 
-  document.getElementById('btn-calls').classList.toggle('active', col === 'calls');
-  document.getElementById('btn-questions').classList.toggle('active', col === 'questions');
+  const sel = document.getElementById('sort-select');
+  if (sel) sel.value = col;
+}}
+
+function toggleDeltas() {{
+  const catList = document.getElementById('cat-list');
+  const btn     = document.getElementById('delta-toggle');
+  const active  = catList.classList.toggle('deltas-visible');
+  if (btn) {{
+    btn.classList.toggle('active', active);
+    btn.innerHTML = active ? btn.dataset.onLabel : btn.dataset.offLabel;
+  }}
 }}
 
 document.addEventListener('DOMContentLoaded', () => {{
@@ -589,6 +687,7 @@ document.addEventListener('DOMContentLoaded', () => {{
 
 
 if __name__ == "__main__":
+    import os as _os
     with open("results.json") as f:
         data = json.load(f)
 
@@ -598,5 +697,28 @@ if __name__ == "__main__":
     to_date         = data["date_range"]["to"]
     resource_map    = data.get("resource_map", {})
 
+    # Load deltas + compare_period from snapshots.json if available
+    deltas         = {}
+    compare_period = None
+    if _os.path.exists("snapshots.json"):
+        with open("snapshots.json") as f:
+            store = json.load(f)
+        snaps = store.get("snapshots", [])
+        if len(snaps) >= 2:
+            prev     = snaps[-2]
+            curr     = snaps[-1]
+            prev_map = {c["name"]: c for c in prev["categories"]}
+            curr_map = {c["name"]: c for c in curr["categories"]}
+            for name, cat in curr_map.items():
+                if name in prev_map:
+                    deltas[name] = {
+                        "call_delta": cat["total_calls"] - prev_map[name]["total_calls"],
+                        "rank_delta": prev_map[name]["rank"] - cat["rank"],
+                    }
+            compare_period = {"from": prev["from_date"], "to": prev["to_date"]}
+
     print(f"  Loaded {len(resource_map)} resource mappings from results.json")
-    write_html(ranked, total_questions, from_date, to_date, resource_map=resource_map)
+    if deltas:
+        print(f"  Loaded deltas from snapshots.json ({len(deltas)} categories, compare: {compare_period})")
+    write_html(ranked, total_questions, from_date, to_date,
+               resource_map=resource_map, deltas=deltas, compare_period=compare_period)

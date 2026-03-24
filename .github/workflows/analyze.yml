@@ -35,6 +35,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add results.json gong_report.html docs_cache.json
+          git add results.json gong_report.html docs_cache.json snapshots.json
           git diff --staged --quiet || git commit -m "chore: weekly report $(date -u +%Y-%m-%d)"
           git push
