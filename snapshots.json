@@ -3842,6 +3842,3639 @@
           ]
         }
       ]
+    },
+    {
+      "id": "2026-03-27",
+      "generated_at": "2026-03-27T17:40:52.212141+00:00",
+      "from_date": "2026-02-25",
+      "to_date": "2026-03-27",
+      "categories": [
+        {
+          "name": "Integrations",
+          "rank": 1,
+          "total_calls": 205,
+          "total_questions": 770,
+          "clusters": [
+            {
+              "canonical": "How does Linear integrate with Slack?",
+              "call_count": 80,
+              "rank": 1
+            },
+            {
+              "canonical": "How does Linear integrate with GitHub?",
+              "call_count": 53,
+              "rank": 2
+            },
+            {
+              "canonical": "How does Linear integrate with AI coding tools?",
+              "call_count": 39,
+              "rank": 3
+            },
+            {
+              "canonical": "How does Linear integrate with customer support tools?",
+              "call_count": 31,
+              "rank": 4
+            },
+            {
+              "canonical": "How does Linear integrate with Jira?",
+              "call_count": 30,
+              "rank": 5
+            },
+            {
+              "canonical": "What integrations does Linear have and how do they work?",
+              "call_count": 24,
+              "rank": 6
+            },
+            {
+              "canonical": "What Salesforce integration capabilities does Linear have?",
+              "call_count": 22,
+              "rank": 7
+            },
+            {
+              "canonical": "How does Linear integrate with Notion?",
+              "call_count": 14,
+              "rank": 8
+            },
+            {
+              "canonical": "How does Linear integrate with GitLab?",
+              "call_count": 14,
+              "rank": 9
+            },
+            {
+              "canonical": "How does Linear integrate with custom tools and APIs?",
+              "call_count": 13,
+              "rank": 10
+            },
+            {
+              "canonical": "What integration setup and documentation is available?",
+              "call_count": 10,
+              "rank": 11
+            },
+            {
+              "canonical": "Does Linear integrate with Cloud Code?",
+              "call_count": 8,
+              "rank": 12
+            },
+            {
+              "canonical": "How does Linear integrate with HubSpot?",
+              "call_count": 7,
+              "rank": 13
+            },
+            {
+              "canonical": "How does Linear integrate with on-call tools?",
+              "call_count": 6,
+              "rank": 14
+            },
+            {
+              "canonical": "What integrations does Linear have with Gong?",
+              "call_count": 6,
+              "rank": 15
+            },
+            {
+              "canonical": "How does Linear integrate with AI tools for code review?",
+              "call_count": 5,
+              "rank": 16
+            },
+            {
+              "canonical": "How does Linear integrate with Google tools?",
+              "call_count": 5,
+              "rank": 17
+            },
+            {
+              "canonical": "How does Linear integrate with design tools like Figma?",
+              "call_count": 5,
+              "rank": 18
+            },
+            {
+              "canonical": "Does Linear integrate with data tools like Snowflake and Google Sheets?",
+              "call_count": 4,
+              "rank": 19
+            },
+            {
+              "canonical": "Does Linear integrate with documentation tools?",
+              "call_count": 3,
+              "rank": 20
+            },
+            {
+              "canonical": "Can Linear integrate with Azure DevOps?",
+              "call_count": 2,
+              "rank": 21
+            },
+            {
+              "canonical": "What security tool integrations does Linear support?",
+              "call_count": 2,
+              "rank": 22
+            },
+            {
+              "canonical": "Does Linear have an integration with Pylon?",
+              "call_count": 2,
+              "rank": 23
+            },
+            {
+              "canonical": "Does Linear have connectivity to Product Board?",
+              "call_count": 2,
+              "rank": 24
+            },
+            {
+              "canonical": "Does Linear have a CLI or MCP integration?",
+              "call_count": 2,
+              "rank": 25
+            },
+            {
+              "canonical": "Does Linear integrate with Incident.io?",
+              "call_count": 2,
+              "rank": 26
+            },
+            {
+              "canonical": "Can Linear create custom fields and metadata for integrations?",
+              "call_count": 2,
+              "rank": 27
+            },
+            {
+              "canonical": "How does Linear integrate with Gus and VT Mom?",
+              "call_count": 2,
+              "rank": 28
+            },
+            {
+              "canonical": "How do time tracking integrations work with Linear?",
+              "call_count": 2,
+              "rank": 29
+            },
+            {
+              "canonical": "What integrations exist with analytics tools like Mixpanel?",
+              "call_count": 2,
+              "rank": 30
+            },
+            {
+              "canonical": "What conversation data can Linear pull from communication platforms?",
+              "call_count": 2,
+              "rank": 31
+            },
+            {
+              "canonical": "How does Linear's integration approach differ from other tools?",
+              "call_count": 2,
+              "rank": 32
+            },
+            {
+              "canonical": "How does Linear handle repository management and deployment tooling?",
+              "call_count": 2,
+              "rank": 33
+            },
+            {
+              "canonical": "Does Linear have a Canny integration?",
+              "call_count": 1,
+              "rank": 34
+            },
+            {
+              "canonical": "How do webhooks work in Linear for notifications?",
+              "call_count": 1,
+              "rank": 35
+            },
+            {
+              "canonical": "Can Linear work with multiple issue tracking systems?",
+              "call_count": 1,
+              "rank": 36
+            },
+            {
+              "canonical": "Does Linear have Polymer integration for product management?",
+              "call_count": 1,
+              "rank": 37
+            },
+            {
+              "canonical": "How does Linear's app marketplace and OAuth integration work?",
+              "call_count": 1,
+              "rank": 38
+            },
+            {
+              "canonical": "Does Linear integrate with Lark?",
+              "call_count": 1,
+              "rank": 39
+            },
+            {
+              "canonical": "What is Dovetail for?",
+              "call_count": 1,
+              "rank": 40
+            },
+            {
+              "canonical": "Does Linear have a Qualio integration?",
+              "call_count": 1,
+              "rank": 41
+            },
+            {
+              "canonical": "Does Linear integrate with Statsig?",
+              "call_count": 1,
+              "rank": 42
+            },
+            {
+              "canonical": "Does Linear have a first-line integration with Atera?",
+              "call_count": 1,
+              "rank": 43
+            },
+            {
+              "canonical": "Does Linear integrate with Octopus for release management?",
+              "call_count": 1,
+              "rank": 44
+            },
+            {
+              "canonical": "Does Linear integrate with test management platforms?",
+              "call_count": 1,
+              "rank": 45
+            },
+            {
+              "canonical": "Does Linear integrate with Kiro?",
+              "call_count": 1,
+              "rank": 46
+            },
+            {
+              "canonical": "Does Linear integrate with BI tools for reporting?",
+              "call_count": 1,
+              "rank": 47
+            },
+            {
+              "canonical": "Does Linear integrate with TestFlight and other deployment tools?",
+              "call_count": 1,
+              "rank": 48
+            },
+            {
+              "canonical": "How does the path filter work for monorepos in releases?",
+              "call_count": 1,
+              "rank": 49
+            },
+            {
+              "canonical": "How does Linear integrate with Amazon's planning systems like Kingpin?",
+              "call_count": 1,
+              "rank": 50
+            },
+            {
+              "canonical": "How does Linear integrate with research tools like Marvin?",
+              "call_count": 1,
+              "rank": 51
+            },
+            {
+              "canonical": "Can Linear integrate with Airtable for roadmap planning?",
+              "call_count": 1,
+              "rank": 52
+            },
+            {
+              "canonical": "What integrations exist with financial reporting and API automation?",
+              "call_count": 1,
+              "rank": 53
+            },
+            {
+              "canonical": "How does Linear support scaling integrations for large organizations?",
+              "call_count": 1,
+              "rank": 54
+            },
+            {
+              "canonical": "What diagnostic information and error visibility does Linear provide when integrations fail?",
+              "call_count": 1,
+              "rank": 55
+            },
+            {
+              "canonical": "Is there a Chrome plugin or browser extension for Linear?",
+              "call_count": 1,
+              "rank": 56
+            }
+          ]
+        },
+        {
+          "name": "Projects & Initiatives",
+          "rank": 2,
+          "total_calls": 152,
+          "total_questions": 574,
+          "clusters": [
+            {
+              "canonical": "How does Linear's release management work?",
+              "call_count": 24,
+              "rank": 1
+            },
+            {
+              "canonical": "How do milestones work in Linear?",
+              "call_count": 19,
+              "rank": 2
+            },
+            {
+              "canonical": "How does roadmapping work in Linear?",
+              "call_count": 16,
+              "rank": 3
+            },
+            {
+              "canonical": "How do initiatives, projects, and issues relate to each other in Linear's hierarchy?",
+              "call_count": 15,
+              "rank": 4
+            },
+            {
+              "canonical": "What timeline and roadmap views are available for projects and initiatives?",
+              "call_count": 14,
+              "rank": 5
+            },
+            {
+              "canonical": "How do project and initiative updates work in Linear?",
+              "call_count": 12,
+              "rank": 6
+            },
+            {
+              "canonical": "What are initiatives in Linear and how do they work?",
+              "call_count": 11,
+              "rank": 7
+            },
+            {
+              "canonical": "How does Linear handle cross-team projects and team organization?",
+              "call_count": 11,
+              "rank": 8
+            },
+            {
+              "canonical": "How does Linear support strategic planning and portfolio management?",
+              "call_count": 8,
+              "rank": 9
+            },
+            {
+              "canonical": "Can initiatives and projects have multiple owners or parents in Linear?",
+              "call_count": 8,
+              "rank": 10
+            },
+            {
+              "canonical": "Can Linear support custom hierarchies and flexible initiative structures?",
+              "call_count": 8,
+              "rank": 11
+            },
+            {
+              "canonical": "Can Linear generate release notes and what customization options are available?",
+              "call_count": 7,
+              "rank": 12
+            },
+            {
+              "canonical": "How do issues, projects, and initiatives connect to OKRs and company goals?",
+              "call_count": 7,
+              "rank": 13
+            },
+            {
+              "canonical": "Can you have sub-initiatives in Linear?",
+              "call_count": 7,
+              "rank": 14
+            },
+            {
+              "canonical": "How does Linear handle project progress tracking and target dates?",
+              "call_count": 6,
+              "rank": 15
+            },
+            {
+              "canonical": "What project templates are available in Linear?",
+              "call_count": 6,
+              "rank": 16
+            },
+            {
+              "canonical": "How does Linear handle project dependencies and program-level planning?",
+              "call_count": 6,
+              "rank": 17
+            },
+            {
+              "canonical": "Can we create custom views and filters in Linear?",
+              "call_count": 6,
+              "rank": 18
+            },
+            {
+              "canonical": "How should we structure and organize projects and initiatives?",
+              "call_count": 6,
+              "rank": 19
+            },
+            {
+              "canonical": "How do projects relate to initiatives and can they be nested or span teams?",
+              "call_count": 6,
+              "rank": 20
+            },
+            {
+              "canonical": "How should we structure and scope projects in Linear?",
+              "call_count": 6,
+              "rank": 21
+            },
+            {
+              "canonical": "When to use initiatives vs projects and what are the use cases?",
+              "call_count": 5,
+              "rank": 22
+            },
+            {
+              "canonical": "How does Linear calculate project progress and target dates?",
+              "call_count": 5,
+              "rank": 23
+            },
+            {
+              "canonical": "How do you create and configure projects?",
+              "call_count": 5,
+              "rank": 24
+            },
+            {
+              "canonical": "What views and filtering options are available for projects?",
+              "call_count": 5,
+              "rank": 25
+            },
+            {
+              "canonical": "What initiative and project status tracking and health indicators does Linear provide?",
+              "call_count": 4,
+              "rank": 26
+            },
+            {
+              "canonical": "Can an initiative have multiple projects inside of it?",
+              "call_count": 4,
+              "rank": 27
+            },
+            {
+              "canonical": "Can issues be assigned to releases and how does that work?",
+              "call_count": 4,
+              "rank": 28
+            },
+            {
+              "canonical": "How does Linear support planning and resource allocation?",
+              "call_count": 3,
+              "rank": 29
+            },
+            {
+              "canonical": "What are best practices for using Linear initiatives?",
+              "call_count": 3,
+              "rank": 30
+            },
+            {
+              "canonical": "How many levels of nesting are supported in Linear's hierarchy?",
+              "call_count": 3,
+              "rank": 31
+            },
+            {
+              "canonical": "Can we integrate Linear with external tools for notifications?",
+              "call_count": 3,
+              "rank": 32
+            },
+            {
+              "canonical": "What API and integration capabilities exist for releases?",
+              "call_count": 3,
+              "rank": 33
+            },
+            {
+              "canonical": "Can releases have updates and notifications?",
+              "call_count": 3,
+              "rank": 34
+            },
+            {
+              "canonical": "What roadmap and planning features are coming?",
+              "call_count": 3,
+              "rank": 35
+            },
+            {
+              "canonical": "How does Linear compare to other tools like Jira?",
+              "call_count": 3,
+              "rank": 36
+            },
+            {
+              "canonical": "How are teams and permissions managed in Linear?",
+              "call_count": 3,
+              "rank": 37
+            },
+            {
+              "canonical": "How can Linear integrate with external tools and provide reporting visibility?",
+              "call_count": 3,
+              "rank": 38
+            },
+            {
+              "canonical": "What are the current limitations and beta features for initiatives?",
+              "call_count": 2,
+              "rank": 39
+            },
+            {
+              "canonical": "Can an issue be linked to multiple projects?",
+              "call_count": 2,
+              "rank": 40
+            },
+            {
+              "canonical": "How should we track pre-execution work like PRDs, research, and design?",
+              "call_count": 2,
+              "rank": 41
+            },
+            {
+              "canonical": "Does Linear support external-facing roadmaps?",
+              "call_count": 2,
+              "rank": 42
+            },
+            {
+              "canonical": "Can initiatives and projects be made private or team-specific?",
+              "call_count": 2,
+              "rank": 43
+            },
+            {
+              "canonical": "Can we customize project properties and make fields mandatory?",
+              "call_count": 2,
+              "rank": 44
+            },
+            {
+              "canonical": "How do we track cross-project dependencies and work?",
+              "call_count": 2,
+              "rank": 45
+            },
+            {
+              "canonical": "How do we handle project planning with different methodologies?",
+              "call_count": 2,
+              "rank": 46
+            },
+            {
+              "canonical": "Can we bulk assign issues to milestones or projects?",
+              "call_count": 2,
+              "rank": 47
+            },
+            {
+              "canonical": "When will the releases feature be available?",
+              "call_count": 2,
+              "rank": 48
+            },
+            {
+              "canonical": "How do release stages and versioning work?",
+              "call_count": 2,
+              "rank": 49
+            },
+            {
+              "canonical": "What project management best practices do you recommend?",
+              "call_count": 2,
+              "rank": 50
+            },
+            {
+              "canonical": "How do team permissions and inheritance work?",
+              "call_count": 2,
+              "rank": 51
+            },
+            {
+              "canonical": "How do cycles relate to projects in Linear?",
+              "call_count": 2,
+              "rank": 52
+            },
+            {
+              "canonical": "What are Linear's capabilities for research and documentation?",
+              "call_count": 1,
+              "rank": 53
+            },
+            {
+              "canonical": "What high-priority VP-level initiatives could Linear support?",
+              "call_count": 1,
+              "rank": 54
+            },
+            {
+              "canonical": "How does Linear pricing work for different user types?",
+              "call_count": 1,
+              "rank": 55
+            },
+            {
+              "canonical": "How does path filtering work for monorepos in Linear?",
+              "call_count": 1,
+              "rank": 56
+            },
+            {
+              "canonical": "Is there initiative-level priority support in Linear?",
+              "call_count": 1,
+              "rank": 57
+            },
+            {
+              "canonical": "Should we separate or combine release pipelines for different components?",
+              "call_count": 1,
+              "rank": 58
+            },
+            {
+              "canonical": "How do you connect work to goals and explain the why behind building features?",
+              "call_count": 1,
+              "rank": 59
+            },
+            {
+              "canonical": "What does the projects backlog workflow look like in Linear?",
+              "call_count": 1,
+              "rank": 60
+            },
+            {
+              "canonical": "Are there program-level progress charts and views available?",
+              "call_count": 1,
+              "rank": 61
+            },
+            {
+              "canonical": "Does Linear support fiscal year quarters?",
+              "call_count": 1,
+              "rank": 62
+            },
+            {
+              "canonical": "What's the difference between Enterprise and Business plans?",
+              "call_count": 1,
+              "rank": 63
+            },
+            {
+              "canonical": "How do roadmap updates propagate across different views?",
+              "call_count": 1,
+              "rank": 64
+            },
+            {
+              "canonical": "What are Linear's current roadmap and upcoming features?",
+              "call_count": 1,
+              "rank": 65
+            },
+            {
+              "canonical": "How do we track version releases with issue numbers?",
+              "call_count": 1,
+              "rank": 66
+            },
+            {
+              "canonical": "What tools do you use alongside Linear for planning?",
+              "call_count": 1,
+              "rank": 67
+            },
+            {
+              "canonical": "How do we track what's shipping to customers?",
+              "call_count": 1,
+              "rank": 68
+            },
+            {
+              "canonical": "Can we create shortcuts and default views?",
+              "call_count": 1,
+              "rank": 69
+            },
+            {
+              "canonical": "What is the pulse feature?",
+              "call_count": 1,
+              "rank": 70
+            },
+            {
+              "canonical": "Can we track document version history?",
+              "call_count": 1,
+              "rank": 71
+            },
+            {
+              "canonical": "What should we call products vs projects in Linear?",
+              "call_count": 1,
+              "rank": 72
+            },
+            {
+              "canonical": "Can Linear query all descendants of an initiative?",
+              "call_count": 1,
+              "rank": 73
+            },
+            {
+              "canonical": "How do we visualize initiative gaps for quarters?",
+              "call_count": 1,
+              "rank": 74
+            },
+            {
+              "canonical": "How does Linear route issues to teams?",
+              "call_count": 1,
+              "rank": 75
+            },
+            {
+              "canonical": "Should we use the customer object for consulting engagements?",
+              "call_count": 1,
+              "rank": 76
+            },
+            {
+              "canonical": "Can projects be triaged in Linear?",
+              "call_count": 1,
+              "rank": 77
+            },
+            {
+              "canonical": "Can we use cascading dates in Linear?",
+              "call_count": 1,
+              "rank": 78
+            },
+            {
+              "canonical": "Are all current projects shown in roadmap views?",
+              "call_count": 1,
+              "rank": 79
+            },
+            {
+              "canonical": "How do we track large implementations spanning multiple projects?",
+              "call_count": 1,
+              "rank": 80
+            },
+            {
+              "canonical": "How do we sum up story points at roadmap level?",
+              "call_count": 1,
+              "rank": 81
+            },
+            {
+              "canonical": "Where can I enable initiatives in my workspace?",
+              "call_count": 1,
+              "rank": 82
+            },
+            {
+              "canonical": "Is a project tied to a specific team?",
+              "call_count": 1,
+              "rank": 83
+            },
+            {
+              "canonical": "Can we show screenshots of roadmap views?",
+              "call_count": 1,
+              "rank": 84
+            },
+            {
+              "canonical": "Does Linear support Gantt charts?",
+              "call_count": 1,
+              "rank": 85
+            },
+            {
+              "canonical": "Can releases be used as templates?",
+              "call_count": 1,
+              "rank": 86
+            },
+            {
+              "canonical": "How should we handle bugs in our project structure?",
+              "call_count": 1,
+              "rank": 87
+            },
+            {
+              "canonical": "What are the pricing implications of different features?",
+              "call_count": 1,
+              "rank": 88
+            },
+            {
+              "canonical": "When will you actually start releasing?",
+              "call_count": 1,
+              "rank": 89
+            },
+            {
+              "canonical": "What are the differences between enterprise and lightweight versions?",
+              "call_count": 1,
+              "rank": 90
+            },
+            {
+              "canonical": "How do we set up releases initially?",
+              "call_count": 1,
+              "rank": 91
+            },
+            {
+              "canonical": "How does Linear handle OKRs?",
+              "call_count": 1,
+              "rank": 92
+            },
+            {
+              "canonical": "How do you link issues to projects in Linear?",
+              "call_count": 1,
+              "rank": 93
+            },
+            {
+              "canonical": "How can I simplify the dependency view when managing multiple projects?",
+              "call_count": 1,
+              "rank": 94
+            },
+            {
+              "canonical": "Is project-level estimate functionality on the Linear roadmap?",
+              "call_count": 1,
+              "rank": 95
+            },
+            {
+              "canonical": "What is the right scope of a project versus an issue in Linear?",
+              "call_count": 1,
+              "rank": 96
+            },
+            {
+              "canonical": "Can you create new documents directly linked to projects?",
+              "call_count": 1,
+              "rank": 97
+            },
+            {
+              "canonical": "How does Linear support review-driven processes?",
+              "call_count": 1,
+              "rank": 98
+            },
+            {
+              "canonical": "Can you drag and drop initiatives to reorganize them?",
+              "call_count": 1,
+              "rank": 99
+            },
+            {
+              "canonical": "How should phase data map to Linear?",
+              "call_count": 1,
+              "rank": 100
+            },
+            {
+              "canonical": "How do we close projects in Linear?",
+              "call_count": 1,
+              "rank": 101
+            },
+            {
+              "canonical": "How do we filter GitHub issues to specific teams?",
+              "call_count": 1,
+              "rank": 102
+            },
+            {
+              "canonical": "What is required for release management beta access?",
+              "call_count": 1,
+              "rank": 103
+            },
+            {
+              "canonical": "Does Linear support complex automated workflows?",
+              "call_count": 1,
+              "rank": 104
+            },
+            {
+              "canonical": "Does Linear have a Slack integration?",
+              "call_count": 1,
+              "rank": 105
+            },
+            {
+              "canonical": "What version control does Linear integrate with?",
+              "call_count": 1,
+              "rank": 106
+            },
+            {
+              "canonical": "What insights functionality does Linear provide?",
+              "call_count": 1,
+              "rank": 107
+            },
+            {
+              "canonical": "Can we access beta features for multiple organizational levels?",
+              "call_count": 1,
+              "rank": 108
+            },
+            {
+              "canonical": "When you add a project to an initiative, can you choose existing projects?",
+              "call_count": 1,
+              "rank": 109
+            },
+            {
+              "canonical": "How much roadmap customization is available out of the box?",
+              "call_count": 1,
+              "rank": 110
+            }
+          ]
+        },
+        {
+          "name": "AI Features & Agents",
+          "rank": 3,
+          "total_calls": 145,
+          "total_questions": 401,
+          "clusters": [
+            {
+              "canonical": "Can Linear agents be assigned to issues and perform automated work?",
+              "call_count": 26,
+              "rank": 1
+            },
+            {
+              "canonical": "How does Linear integrate with AI stacks and external tools?",
+              "call_count": 25,
+              "rank": 2
+            },
+            {
+              "canonical": "How does Linear's MCP server work and integrate with coding agents like Claude and Cursor?",
+              "call_count": 22,
+              "rank": 3
+            },
+            {
+              "canonical": "What is triage intelligence and how does it work?",
+              "call_count": 21,
+              "rank": 4
+            },
+            {
+              "canonical": "Can Linear generate automatic updates and responses?",
+              "call_count": 19,
+              "rank": 5
+            },
+            {
+              "canonical": "How do you tag and invoke Linear agents in workflows?",
+              "call_count": 18,
+              "rank": 6
+            },
+            {
+              "canonical": "Can Linear agents work with organizational knowledge bases?",
+              "call_count": 17,
+              "rank": 7
+            },
+            {
+              "canonical": "What are Linear's AI capabilities and features?",
+              "call_count": 14,
+              "rank": 8
+            },
+            {
+              "canonical": "What is the Linear agent and how does it work?",
+              "call_count": 13,
+              "rank": 9
+            },
+            {
+              "canonical": "Can Linear agents analyze metrics and performance data?",
+              "call_count": 12,
+              "rank": 10
+            },
+            {
+              "canonical": "Can Linear agents create issues from discussions and analyze themes?",
+              "call_count": 12,
+              "rank": 11
+            },
+            {
+              "canonical": "Can Linear agents estimate time and scope work?",
+              "call_count": 11,
+              "rank": 12
+            },
+            {
+              "canonical": "Is the agent feature included in subscriptions and pricing?",
+              "call_count": 11,
+              "rank": 13
+            },
+            {
+              "canonical": "What timeline exists for AI agent features and availability?",
+              "call_count": 11,
+              "rank": 14
+            },
+            {
+              "canonical": "What LLM does Linear use and how is data security handled?",
+              "call_count": 9,
+              "rank": 15
+            },
+            {
+              "canonical": "What is the Linear agent platform?",
+              "call_count": 8,
+              "rank": 16
+            },
+            {
+              "canonical": "How does Linear deploy and strategy for agents?",
+              "call_count": 6,
+              "rank": 17
+            },
+            {
+              "canonical": "How does Linear detect and handle duplicate issues?",
+              "call_count": 5,
+              "rank": 18
+            },
+            {
+              "canonical": "What is the difference between Linear's various AI offerings?",
+              "call_count": 4,
+              "rank": 19
+            },
+            {
+              "canonical": "What is the scope and access level of Linear agents?",
+              "call_count": 3,
+              "rank": 20
+            },
+            {
+              "canonical": "Can Linear create automatic workflows from Slack discussions?",
+              "call_count": 3,
+              "rank": 21
+            },
+            {
+              "canonical": "What resources and training are available for AI features?",
+              "call_count": 3,
+              "rank": 22
+            },
+            {
+              "canonical": "Does the agent require human prompting or is it more autonomous?",
+              "call_count": 2,
+              "rank": 23
+            },
+            {
+              "canonical": "Can Linear evaluate and improve user story quality with AI?",
+              "call_count": 2,
+              "rank": 24
+            },
+            {
+              "canonical": "Are there demo videos available for agent features?",
+              "call_count": 2,
+              "rank": 25
+            },
+            {
+              "canonical": "Are AI code reviews available in Linear?",
+              "call_count": 2,
+              "rank": 26
+            },
+            {
+              "canonical": "What coding agents are you using?",
+              "call_count": 2,
+              "rank": 27
+            },
+            {
+              "canonical": "What AI agent would be helpful for data extraction?",
+              "call_count": 1,
+              "rank": 28
+            },
+            {
+              "canonical": "What standards and guardrails exist for agent-generated work?",
+              "call_count": 1,
+              "rank": 29
+            },
+            {
+              "canonical": "Does Linear have a repo suggestion agent for development workflows?",
+              "call_count": 1,
+              "rank": 30
+            },
+            {
+              "canonical": "Can Linear data be exported for external analysis?",
+              "call_count": 1,
+              "rank": 31
+            },
+            {
+              "canonical": "What does the usage feedback feature do in Linear AI?",
+              "call_count": 1,
+              "rank": 32
+            },
+            {
+              "canonical": "Can Linear be used as primary tool while supporting agentic workflows?",
+              "call_count": 1,
+              "rank": 33
+            },
+            {
+              "canonical": "Is the Linear bot proactively engaging in conversations?",
+              "call_count": 1,
+              "rank": 34
+            },
+            {
+              "canonical": "How does Linear bridge the gap between current and AI-shaped software shipping?",
+              "call_count": 1,
+              "rank": 35
+            },
+            {
+              "canonical": "What are code review features in Linear?",
+              "call_count": 1,
+              "rank": 36
+            },
+            {
+              "canonical": "How should QA teams report issues in Linear?",
+              "call_count": 1,
+              "rank": 37
+            },
+            {
+              "canonical": "When was the last engagement with specific Linear users?",
+              "call_count": 1,
+              "rank": 38
+            },
+            {
+              "canonical": "Do you plan to add task color customization?",
+              "call_count": 1,
+              "rank": 39
+            },
+            {
+              "canonical": "Is there a web portal option for the AI features?",
+              "call_count": 1,
+              "rank": 40
+            },
+            {
+              "canonical": "What makes Linear different in the AI-native landscape?",
+              "call_count": 1,
+              "rank": 41
+            }
+          ]
+        },
+        {
+          "name": "Issues & Issue Management",
+          "rank": 4,
+          "total_calls": 132,
+          "total_questions": 400,
+          "clusters": [
+            {
+              "canonical": "How do labels work in Linear (creation, assignment, management)?",
+              "call_count": 30,
+              "rank": 1
+            },
+            {
+              "canonical": "How do issue templates work in Linear?",
+              "call_count": 22,
+              "rank": 2
+            },
+            {
+              "canonical": "What views and filtering options are available in Linear?",
+              "call_count": 21,
+              "rank": 3
+            },
+            {
+              "canonical": "How does the triage queue work in Linear?",
+              "call_count": 18,
+              "rank": 4
+            },
+            {
+              "canonical": "Does Linear support custom fields?",
+              "call_count": 16,
+              "rank": 5
+            },
+            {
+              "canonical": "What labeling capabilities does Linear provide and how can they be managed?",
+              "call_count": 15,
+              "rank": 6
+            },
+            {
+              "canonical": "How do sub-issues work and what are their capabilities?",
+              "call_count": 11,
+              "rank": 7
+            },
+            {
+              "canonical": "What estimation and time tracking capabilities does Linear offer?",
+              "call_count": 11,
+              "rank": 8
+            },
+            {
+              "canonical": "How does customer/external user tagging and management work?",
+              "call_count": 9,
+              "rank": 9
+            },
+            {
+              "canonical": "How does duplicate issue merging work in Linear?",
+              "call_count": 9,
+              "rank": 10
+            },
+            {
+              "canonical": "How does issue assignment and notifications work?",
+              "call_count": 9,
+              "rank": 11
+            },
+            {
+              "canonical": "How do filtering, views, and search capabilities work in Linear?",
+              "call_count": 9,
+              "rank": 12
+            },
+            {
+              "canonical": "What is Linear's issue hierarchy and work item types?",
+              "call_count": 8,
+              "rank": 13
+            },
+            {
+              "canonical": "How do you integrate Linear with external tools and data sources?",
+              "call_count": 7,
+              "rank": 14
+            },
+            {
+              "canonical": "How do you filter and segment customer feedback and feature requests?",
+              "call_count": 7,
+              "rank": 15
+            },
+            {
+              "canonical": "How does issue status management and tracking work?",
+              "call_count": 6,
+              "rank": 16
+            },
+            {
+              "canonical": "How does Linear handle cross-team collaboration and issue sharing?",
+              "call_count": 5,
+              "rank": 17
+            },
+            {
+              "canonical": "Can Linear's priority/severity system be customized?",
+              "call_count": 5,
+              "rank": 18
+            },
+            {
+              "canonical": "How do SLAs work in Linear?",
+              "call_count": 4,
+              "rank": 19
+            },
+            {
+              "canonical": "Can issues have sub-issues, checklists, or be linked to multiple projects?",
+              "call_count": 4,
+              "rank": 20
+            },
+            {
+              "canonical": "How do you handle duplicate issues and problem identification?",
+              "call_count": 4,
+              "rank": 21
+            },
+            {
+              "canonical": "How fast is issue creation in Linear?",
+              "call_count": 4,
+              "rank": 22
+            },
+            {
+              "canonical": "What are the pricing and enterprise options available?",
+              "call_count": 4,
+              "rank": 23
+            },
+            {
+              "canonical": "How do you organize and categorize different types of work or proposals?",
+              "call_count": 4,
+              "rank": 24
+            },
+            {
+              "canonical": "What templating options exist for projects and documentation?",
+              "call_count": 4,
+              "rank": 25
+            },
+            {
+              "canonical": "Is Linear suitable for support and hardware issue tracking workflows?",
+              "call_count": 3,
+              "rank": 26
+            },
+            {
+              "canonical": "Can issues exist without being attached to projects?",
+              "call_count": 3,
+              "rank": 27
+            },
+            {
+              "canonical": "What issue creation methods and shortcuts are available?",
+              "call_count": 3,
+              "rank": 28
+            },
+            {
+              "canonical": "How do issue dependencies work in Linear?",
+              "call_count": 3,
+              "rank": 29
+            },
+            {
+              "canonical": "Does Linear have upvoting/downvoting features for issues?",
+              "call_count": 2,
+              "rank": 30
+            },
+            {
+              "canonical": "How do you manage large volumes of issues and releases?",
+              "call_count": 2,
+              "rank": 31
+            },
+            {
+              "canonical": "What reporting and financial analysis capabilities does Linear provide?",
+              "call_count": 2,
+              "rank": 32
+            },
+            {
+              "canonical": "How do due dates work in Linear?",
+              "call_count": 2,
+              "rank": 33
+            },
+            {
+              "canonical": "Can issues be copied or moved between locations?",
+              "call_count": 2,
+              "rank": 34
+            },
+            {
+              "canonical": "How do we track work through different environments and branches?",
+              "call_count": 2,
+              "rank": 35
+            },
+            {
+              "canonical": "What are user stories and how do they work in Linear?",
+              "call_count": 2,
+              "rank": 36
+            },
+            {
+              "canonical": "How do you save changes to issues in Linear?",
+              "call_count": 1,
+              "rank": 37
+            },
+            {
+              "canonical": "What does archiving a team do?",
+              "call_count": 1,
+              "rank": 38
+            },
+            {
+              "canonical": "How do you create custom views for specific labels?",
+              "call_count": 1,
+              "rank": 39
+            },
+            {
+              "canonical": "What are the customer tier field options?",
+              "call_count": 1,
+              "rank": 40
+            },
+            {
+              "canonical": "How do you track and filter issues by requester or submitter?",
+              "call_count": 1,
+              "rank": 41
+            },
+            {
+              "canonical": "How do you handle quality assurance workflows in Linear?",
+              "call_count": 1,
+              "rank": 42
+            },
+            {
+              "canonical": "How do you track multiple people working on different stages of work?",
+              "call_count": 1,
+              "rank": 43
+            },
+            {
+              "canonical": "What are the capabilities for grouping and organizing similar tasks?",
+              "call_count": 1,
+              "rank": 44
+            },
+            {
+              "canonical": "What workflow comparison capabilities exist with current tools?",
+              "call_count": 1,
+              "rank": 45
+            },
+            {
+              "canonical": "How do you manage external bug report intake?",
+              "call_count": 1,
+              "rank": 46
+            },
+            {
+              "canonical": "What issue creation workflow exists through Slack integration?",
+              "call_count": 1,
+              "rank": 47
+            },
+            {
+              "canonical": "How do you handle work documentation and PRD management?",
+              "call_count": 1,
+              "rank": 48
+            },
+            {
+              "canonical": "What team routing and assignment automation is available?",
+              "call_count": 1,
+              "rank": 49
+            },
+            {
+              "canonical": "How do you manage anti-patterns in team organization?",
+              "call_count": 1,
+              "rank": 50
+            },
+            {
+              "canonical": "What are the best practices for Linear implementation?",
+              "call_count": 1,
+              "rank": 51
+            },
+            {
+              "canonical": "How do issue comments and collaboration features work?",
+              "call_count": 1,
+              "rank": 52
+            },
+            {
+              "canonical": "How does GitHub sync work with Linear issues?",
+              "call_count": 1,
+              "rank": 53
+            },
+            {
+              "canonical": "Can roadmaps be exported or shared externally?",
+              "call_count": 1,
+              "rank": 54
+            },
+            {
+              "canonical": "How do permissions work to control issue visibility?",
+              "call_count": 1,
+              "rank": 55
+            },
+            {
+              "canonical": "Does Linear have resource allocation and capacity planning features?",
+              "call_count": 1,
+              "rank": 56
+            },
+            {
+              "canonical": "What case workflow and management options are available?",
+              "call_count": 1,
+              "rank": 57
+            },
+            {
+              "canonical": "Does Linear support deals or opportunities tracking?",
+              "call_count": 1,
+              "rank": 58
+            },
+            {
+              "canonical": "What settings can sub teams inherit from parent teams?",
+              "call_count": 1,
+              "rank": 59
+            }
+          ]
+        },
+        {
+          "name": "Billing & Pricing",
+          "rank": 5,
+          "total_calls": 114,
+          "total_questions": 421,
+          "clusters": [
+            {
+              "canonical": "What is Linear's pricing structure and per-user costs?",
+              "call_count": 52,
+              "rank": 1
+            },
+            {
+              "canonical": "What discounts are available and how do we negotiate pricing?",
+              "call_count": 36,
+              "rank": 2
+            },
+            {
+              "canonical": "What are the differences between Business and Enterprise plans?",
+              "call_count": 33,
+              "rank": 3
+            },
+            {
+              "canonical": "What payment terms and contract options are available?",
+              "call_count": 25,
+              "rank": 4
+            },
+            {
+              "canonical": "What trial period options are available and how do they work?",
+              "call_count": 21,
+              "rank": 5
+            },
+            {
+              "canonical": "What features are included in different plan tiers?",
+              "call_count": 18,
+              "rank": 6
+            },
+            {
+              "canonical": "How does user billing work when adding/removing users?",
+              "call_count": 17,
+              "rank": 7
+            },
+            {
+              "canonical": "How does role-based or guest access pricing work?",
+              "call_count": 15,
+              "rank": 8
+            },
+            {
+              "canonical": "How does plan migration and upgrading work?",
+              "call_count": 10,
+              "rank": 9
+            },
+            {
+              "canonical": "What enterprise-specific features and support are available?",
+              "call_count": 10,
+              "rank": 10
+            },
+            {
+              "canonical": "What are the current plan details and renewal information?",
+              "call_count": 5,
+              "rank": 11
+            },
+            {
+              "canonical": "What are the annual vs monthly pricing differences?",
+              "call_count": 5,
+              "rank": 12
+            },
+            {
+              "canonical": "How does AI functionality and pricing work?",
+              "call_count": 4,
+              "rank": 13
+            },
+            {
+              "canonical": "What billing frequency options are available?",
+              "call_count": 3,
+              "rank": 14
+            },
+            {
+              "canonical": "What contract timing and approval processes are involved?",
+              "call_count": 3,
+              "rank": 15
+            },
+            {
+              "canonical": "What tool migration support is available?",
+              "call_count": 3,
+              "rank": 16
+            },
+            {
+              "canonical": "What is guest access pricing and functionality?",
+              "call_count": 3,
+              "rank": 17
+            },
+            {
+              "canonical": "How should we determine the right plan for our team?",
+              "call_count": 2,
+              "rank": 18
+            },
+            {
+              "canonical": "What are the feature differences between legacy and current plans?",
+              "call_count": 2,
+              "rank": 19
+            },
+            {
+              "canonical": "What are Linear's different plan options?",
+              "call_count": 2,
+              "rank": 20
+            },
+            {
+              "canonical": "What are cost centers and how do they work?",
+              "call_count": 1,
+              "rank": 21
+            },
+            {
+              "canonical": "What partner program options are available?",
+              "call_count": 1,
+              "rank": 22
+            },
+            {
+              "canonical": "What is the Atlassian suite cost comparison?",
+              "call_count": 1,
+              "rank": 23
+            },
+            {
+              "canonical": "Is switching worth it without enterprise features?",
+              "call_count": 1,
+              "rank": 24
+            },
+            {
+              "canonical": "Are there growth incentives on business plan?",
+              "call_count": 1,
+              "rank": 25
+            },
+            {
+              "canonical": "When will releases feature be available?",
+              "call_count": 1,
+              "rank": 26
+            },
+            {
+              "canonical": "Do you track Confluence and bridge with Jira?",
+              "call_count": 1,
+              "rank": 27
+            },
+            {
+              "canonical": "Can you ask Emma about pricing again?",
+              "call_count": 1,
+              "rank": 28
+            },
+            {
+              "canonical": "What are dashboards and how do they work?",
+              "call_count": 1,
+              "rank": 29
+            },
+            {
+              "canonical": "Does Linear support third-party marketplace billing?",
+              "call_count": 1,
+              "rank": 30
+            },
+            {
+              "canonical": "What happens with Zendesk integration?",
+              "call_count": 1,
+              "rank": 31
+            },
+            {
+              "canonical": "What happens to our data after trial ends?",
+              "call_count": 1,
+              "rank": 32
+            },
+            {
+              "canonical": "What are dashboards functionality?",
+              "call_count": 1,
+              "rank": 33
+            }
+          ]
+        },
+        {
+          "name": "Trials & Implementation",
+          "rank": 6,
+          "total_calls": 110,
+          "total_questions": 251,
+          "clusters": [
+            {
+              "canonical": "Do you provide training sessions and enablement for teams?",
+              "call_count": 22,
+              "rank": 1
+            },
+            {
+              "canonical": "How long is the trial period?",
+              "call_count": 19,
+              "rank": 2
+            },
+            {
+              "canonical": "What does the migration/implementation process look like and how long does it take?",
+              "call_count": 17,
+              "rank": 3
+            },
+            {
+              "canonical": "What does a pilot look like and how long should it be?",
+              "call_count": 15,
+              "rank": 4
+            },
+            {
+              "canonical": "What are the next steps in our evaluation process?",
+              "call_count": 11,
+              "rank": 5
+            },
+            {
+              "canonical": "What support do you provide during implementation and migration?",
+              "call_count": 11,
+              "rank": 6
+            },
+            {
+              "canonical": "What are the biggest challenges and best practices for Linear adoption?",
+              "call_count": 6,
+              "rank": 7
+            },
+            {
+              "canonical": "How should we structure rollout across teams - phased approach vs all at once?",
+              "call_count": 6,
+              "rank": 8
+            },
+            {
+              "canonical": "How do we get other teams and stakeholders on board with Linear adoption?",
+              "call_count": 5,
+              "rank": 9
+            },
+            {
+              "canonical": "What integrations should we prioritize during setup?",
+              "call_count": 4,
+              "rank": 10
+            },
+            {
+              "canonical": "Can you help with configuration and setup during the trial?",
+              "call_count": 4,
+              "rank": 11
+            },
+            {
+              "canonical": "What is the current status of your Linear trial?",
+              "call_count": 4,
+              "rank": 12
+            },
+            {
+              "canonical": "Do you have template projects or examples we can use for testing?",
+              "call_count": 4,
+              "rank": 13
+            },
+            {
+              "canonical": "What should we consider when evaluating Linear further?",
+              "call_count": 3,
+              "rank": 14
+            },
+            {
+              "canonical": "Can we schedule regular check-ins during the evaluation?",
+              "call_count": 3,
+              "rank": 15
+            },
+            {
+              "canonical": "How many users should we plan for in our Linear implementation?",
+              "call_count": 3,
+              "rank": 16
+            },
+            {
+              "canonical": "Is this rollout for specific teams or company-wide?",
+              "call_count": 3,
+              "rank": 17
+            },
+            {
+              "canonical": "What is the typical trial experience and what do customers usually test?",
+              "call_count": 3,
+              "rank": 18
+            },
+            {
+              "canonical": "Can we set up a shared Slack channel for collaboration during the pilot?",
+              "call_count": 3,
+              "rank": 19
+            },
+            {
+              "canonical": "How long do you need to test and validate Linear before making a decision?",
+              "call_count": 3,
+              "rank": 20
+            },
+            {
+              "canonical": "Can you provide customized demos for our specific workflows?",
+              "call_count": 2,
+              "rank": 21
+            },
+            {
+              "canonical": "What is included in a trial period and what are the details?",
+              "call_count": 2,
+              "rank": 22
+            },
+            {
+              "canonical": "Can we run parallel processes (legal, security, pilot) at the same time?",
+              "call_count": 2,
+              "rank": 23
+            },
+            {
+              "canonical": "What happens to existing accounts and workspaces during migration?",
+              "call_count": 2,
+              "rank": 24
+            },
+            {
+              "canonical": "Do you have team members in different time zones for support?",
+              "call_count": 2,
+              "rank": 25
+            },
+            {
+              "canonical": "How do we handle research and discovery workflows in Linear?",
+              "call_count": 2,
+              "rank": 26
+            },
+            {
+              "canonical": "What advanced features can we test to show value?",
+              "call_count": 2,
+              "rank": 27
+            },
+            {
+              "canonical": "Do you have specific integration capabilities we should test?",
+              "call_count": 2,
+              "rank": 28
+            },
+            {
+              "canonical": "How do we get started with Linear?",
+              "call_count": 2,
+              "rank": 29
+            },
+            {
+              "canonical": "What documentation and materials need to be maintained during implementation?",
+              "call_count": 2,
+              "rank": 30
+            },
+            {
+              "canonical": "Do you offer migration incentives or special pricing during onboarding?",
+              "call_count": 1,
+              "rank": 31
+            },
+            {
+              "canonical": "What are your survey questions and feedback collection methods?",
+              "call_count": 1,
+              "rank": 32
+            },
+            {
+              "canonical": "Are you prepared to set up your team in Linear?",
+              "call_count": 1,
+              "rank": 33
+            },
+            {
+              "canonical": "Can you offer specialized sessions with product managers?",
+              "call_count": 1,
+              "rank": 34
+            },
+            {
+              "canonical": "What team decisions need to be made about tooling?",
+              "call_count": 1,
+              "rank": 35
+            },
+            {
+              "canonical": "Do you have existing customers we can reference in our industry or company group?",
+              "call_count": 1,
+              "rank": 36
+            },
+            {
+              "canonical": "What ongoing human resources and maintenance are required?",
+              "call_count": 1,
+              "rank": 37
+            },
+            {
+              "canonical": "Do you have confidence in the engineering implementation aspects?",
+              "call_count": 1,
+              "rank": 38
+            },
+            {
+              "canonical": "What data security considerations should we be aware of during setup?",
+              "call_count": 1,
+              "rank": 39
+            },
+            {
+              "canonical": "How do I navigate and use specific Linear features like viewing previous cycle issues?",
+              "call_count": 1,
+              "rank": 40
+            },
+            {
+              "canonical": "Can we provide input on AI triage functionality?",
+              "call_count": 1,
+              "rank": 41
+            },
+            {
+              "canonical": "How does the Slack integration work and does it need backend enablement?",
+              "call_count": 1,
+              "rank": 42
+            },
+            {
+              "canonical": "How do we add backlog items to cycles during planning?",
+              "call_count": 1,
+              "rank": 43
+            },
+            {
+              "canonical": "How do non-Linear teams get visibility into Linear projects?",
+              "call_count": 1,
+              "rank": 44
+            }
+          ]
+        },
+        {
+          "name": "Insights & Reporting",
+          "rank": 7,
+          "total_calls": 101,
+          "total_questions": 246,
+          "clusters": [
+            {
+              "canonical": "What dashboard and reporting capabilities does Linear have?",
+              "call_count": 28,
+              "rank": 1
+            },
+            {
+              "canonical": "What metrics can Linear track (cycle time, velocity, throughput)?",
+              "call_count": 14,
+              "rank": 2
+            },
+            {
+              "canonical": "Can you create custom views to filter and organize issues/projects?",
+              "call_count": 12,
+              "rank": 3
+            },
+            {
+              "canonical": "Can dashboards be shared with different users or audiences?",
+              "call_count": 11,
+              "rank": 4
+            },
+            {
+              "canonical": "What insights and analytics features are available?",
+              "call_count": 11,
+              "rank": 5
+            },
+            {
+              "canonical": "Can you track project progress with burn-up charts and milestones?",
+              "call_count": 11,
+              "rank": 6
+            },
+            {
+              "canonical": "How do you manage dashboards (create, clone, move, organize)?",
+              "call_count": 7,
+              "rank": 7
+            },
+            {
+              "canonical": "Can you export data from Linear to CSV or Google Sheets?",
+              "call_count": 7,
+              "rank": 8
+            },
+            {
+              "canonical": "Can you track multiple teams or projects in a single dashboard?",
+              "call_count": 6,
+              "rank": 9
+            },
+            {
+              "canonical": "Can you create alerts or notifications for project status?",
+              "call_count": 6,
+              "rank": 10
+            },
+            {
+              "canonical": "How can you track project success and historical performance?",
+              "call_count": 4,
+              "rank": 11
+            },
+            {
+              "canonical": "Can I get sprint reporting showing planned vs actual work and scope creep?",
+              "call_count": 4,
+              "rank": 12
+            },
+            {
+              "canonical": "How can I track work progress and bottlenecks across different statuses?",
+              "call_count": 4,
+              "rank": 13
+            },
+            {
+              "canonical": "What roadmap and timeline visualization options are available?",
+              "call_count": 4,
+              "rank": 14
+            },
+            {
+              "canonical": "Can you track time spent on tasks and projects?",
+              "call_count": 4,
+              "rank": 15
+            },
+            {
+              "canonical": "Can you create resource allocation views showing team member workloads?",
+              "call_count": 4,
+              "rank": 16
+            },
+            {
+              "canonical": "How do you handle feedback management and signal from noise?",
+              "call_count": 4,
+              "rank": 17
+            },
+            {
+              "canonical": "Can you see percentage breakdowns and charts like in Jira?",
+              "call_count": 3,
+              "rank": 18
+            },
+            {
+              "canonical": "Can you track DORA metrics and deployment frequency in Linear?",
+              "call_count": 3,
+              "rank": 19
+            },
+            {
+              "canonical": "Should we use Linear's built-in reporting or export to external tools?",
+              "call_count": 3,
+              "rank": 20
+            },
+            {
+              "canonical": "What is the AI update feature?",
+              "call_count": 2,
+              "rank": 21
+            },
+            {
+              "canonical": "How do project views and dashboards work for tracking data?",
+              "call_count": 2,
+              "rank": 22
+            },
+            {
+              "canonical": "Can you create SLA tracking dashboards?",
+              "call_count": 1,
+              "rank": 23
+            },
+            {
+              "canonical": "What are Linear's best practices for work organization?",
+              "call_count": 1,
+              "rank": 24
+            },
+            {
+              "canonical": "Does Linear track year-over-year revenue impact?",
+              "call_count": 1,
+              "rank": 25
+            },
+            {
+              "canonical": "Can you create asynchronous standup reports?",
+              "call_count": 1,
+              "rank": 26
+            },
+            {
+              "canonical": "Can you track specific metrics like ticket creation from sources?",
+              "call_count": 1,
+              "rank": 27
+            },
+            {
+              "canonical": "Can you create effort matrix views for feature requests?",
+              "call_count": 1,
+              "rank": 28
+            },
+            {
+              "canonical": "Is activity tracking just user logins?",
+              "call_count": 1,
+              "rank": 29
+            },
+            {
+              "canonical": "Should raw data or graphs be used for analysis?",
+              "call_count": 1,
+              "rank": 30
+            },
+            {
+              "canonical": "Can you create complex business structure dashboards?",
+              "call_count": 1,
+              "rank": 31
+            },
+            {
+              "canonical": "Can you pull archived item reports?",
+              "call_count": 1,
+              "rank": 32
+            },
+            {
+              "canonical": "Can you create separate intake channels in Teams integration?",
+              "call_count": 1,
+              "rank": 33
+            },
+            {
+              "canonical": "What is the best public reporting view for projects?",
+              "call_count": 1,
+              "rank": 34
+            },
+            {
+              "canonical": "Can dashboards track daily/weekly metrics from external sources?",
+              "call_count": 1,
+              "rank": 35
+            },
+            {
+              "canonical": "Can you restrict dashboard access to specific users?",
+              "call_count": 1,
+              "rank": 36
+            },
+            {
+              "canonical": "What specific reporting metrics are most needed?",
+              "call_count": 1,
+              "rank": 37
+            },
+            {
+              "canonical": "Can I get weekly summaries and filtered updates across multiple projects?",
+              "call_count": 1,
+              "rank": 38
+            },
+            {
+              "canonical": "Can I drill down from dashboard metrics to see underlying issues?",
+              "call_count": 1,
+              "rank": 39
+            },
+            {
+              "canonical": "How can I get usage data and webhook/activities information?",
+              "call_count": 1,
+              "rank": 40
+            },
+            {
+              "canonical": "What proof points do you have around Linear's impact on teams?",
+              "call_count": 1,
+              "rank": 41
+            },
+            {
+              "canonical": "Do I need admin access to build reporting features?",
+              "call_count": 1,
+              "rank": 42
+            },
+            {
+              "canonical": "Can I use branch information in insights and reporting?",
+              "call_count": 1,
+              "rank": 43
+            },
+            {
+              "canonical": "Can I track bugs and associate them with originating features?",
+              "call_count": 1,
+              "rank": 44
+            },
+            {
+              "canonical": "How does predictive completion work in Linear?",
+              "call_count": 1,
+              "rank": 45
+            },
+            {
+              "canonical": "Can I segment insights data by priority or other criteria?",
+              "call_count": 1,
+              "rank": 46
+            }
+          ]
+        },
+        {
+          "name": "Workspace & Team Structure",
+          "rank": 8,
+          "total_calls": 95,
+          "total_questions": 212,
+          "clusters": [
+            {
+              "canonical": "How should we structure our teams and workspace in Linear?",
+              "call_count": 42,
+              "rank": 1
+            },
+            {
+              "canonical": "What permissions and roles are available in Linear?",
+              "call_count": 35,
+              "rank": 2
+            },
+            {
+              "canonical": "How do sub-teams work and what are the benefits?",
+              "call_count": 17,
+              "rank": 3
+            },
+            {
+              "canonical": "Can we delete or archive old workspaces and teams?",
+              "call_count": 9,
+              "rank": 4
+            },
+            {
+              "canonical": "How do we handle contractors and external access?",
+              "call_count": 5,
+              "rank": 5
+            },
+            {
+              "canonical": "Can people belong to multiple teams?",
+              "call_count": 4,
+              "rank": 6
+            },
+            {
+              "canonical": "How does Linear scale for large teams (200+ users, hundreds of teams)?",
+              "call_count": 4,
+              "rank": 7
+            },
+            {
+              "canonical": "Who are the main users of Linear (engineers, product team, etc.)?",
+              "call_count": 4,
+              "rank": 8
+            },
+            {
+              "canonical": "What is the trial period and how do we get started?",
+              "call_count": 3,
+              "rank": 9
+            },
+            {
+              "canonical": "Can we share workspace access or get read-only access?",
+              "call_count": 2,
+              "rank": 10
+            },
+            {
+              "canonical": "What are workspace and project templates?",
+              "call_count": 2,
+              "rank": 11
+            },
+            {
+              "canonical": "What integrations are possible with Linear?",
+              "call_count": 2,
+              "rank": 12
+            },
+            {
+              "canonical": "What are the best practices for organizing feedback?",
+              "call_count": 1,
+              "rank": 13
+            },
+            {
+              "canonical": "Can multiple Linear workspaces connect to the same Slack instance?",
+              "call_count": 1,
+              "rank": 14
+            },
+            {
+              "canonical": "Which workspace are you currently working in?",
+              "call_count": 1,
+              "rank": 15
+            },
+            {
+              "canonical": "Can documentation be segmented and indexed in various ways?",
+              "call_count": 1,
+              "rank": 16
+            },
+            {
+              "canonical": "Can issues be linked to multiple milestones or projects?",
+              "call_count": 1,
+              "rank": 17
+            },
+            {
+              "canonical": "Can PNG files be used as visual identifiers on cards?",
+              "call_count": 1,
+              "rank": 18
+            },
+            {
+              "canonical": "Should you be made an owner on the workspace?",
+              "call_count": 1,
+              "rank": 19
+            }
+          ]
+        },
+        {
+          "name": "Asks",
+          "rank": 9,
+          "total_calls": 87,
+          "total_questions": 271,
+          "clusters": [
+            {
+              "canonical": "How do you handle customer feedback and requests in Linear?",
+              "call_count": 17,
+              "rank": 1
+            },
+            {
+              "canonical": "How does the Slack integration work for asks?",
+              "call_count": 15,
+              "rank": 2
+            },
+            {
+              "canonical": "How do you handle intake and triage processes?",
+              "call_count": 15,
+              "rank": 3
+            },
+            {
+              "canonical": "Does Linear have web forms for intake?",
+              "call_count": 13,
+              "rank": 4
+            },
+            {
+              "canonical": "Can you set up templates for asks?",
+              "call_count": 12,
+              "rank": 5
+            },
+            {
+              "canonical": "What is Linear Asks?",
+              "call_count": 9,
+              "rank": 6
+            },
+            {
+              "canonical": "How does Linear Asks work?",
+              "call_count": 9,
+              "rank": 7
+            },
+            {
+              "canonical": "Can non-Linear users submit requests through Asks?",
+              "call_count": 8,
+              "rank": 8
+            },
+            {
+              "canonical": "How do you handle customer requests and manage their status?",
+              "call_count": 7,
+              "rank": 9
+            },
+            {
+              "canonical": "What are advanced Linear Asks features and capabilities?",
+              "call_count": 7,
+              "rank": 10
+            },
+            {
+              "canonical": "Can you use asks for internal departments and team requests?",
+              "call_count": 7,
+              "rank": 11
+            },
+            {
+              "canonical": "Does Linear have email intake functionality?",
+              "call_count": 6,
+              "rank": 12
+            },
+            {
+              "canonical": "How does per-channel configuration work for asks?",
+              "call_count": 6,
+              "rank": 13
+            },
+            {
+              "canonical": "Do you need a Linear license to submit an ask?",
+              "call_count": 4,
+              "rank": 14
+            },
+            {
+              "canonical": "How does Linear integrate with other tools like Salesforce or Intercom?",
+              "call_count": 4,
+              "rank": 15
+            },
+            {
+              "canonical": "How do you route and assign requests to specific teams?",
+              "call_count": 4,
+              "rank": 16
+            },
+            {
+              "canonical": "Can you create forms with required fields and dropdowns?",
+              "call_count": 4,
+              "rank": 17
+            },
+            {
+              "canonical": "Is asks currently enabled in our workspace?",
+              "call_count": 3,
+              "rank": 18
+            },
+            {
+              "canonical": "Can you use Linear Asks in private channels or for sensitive requests?",
+              "call_count": 3,
+              "rank": 19
+            },
+            {
+              "canonical": "How does ticket creation from Slack conversations work?",
+              "call_count": 3,
+              "rank": 20
+            },
+            {
+              "canonical": "How do you manage customer objects and provisioning?",
+              "call_count": 2,
+              "rank": 21
+            },
+            {
+              "canonical": "Can you track enhancement requests from submission to deployment?",
+              "call_count": 2,
+              "rank": 22
+            },
+            {
+              "canonical": "How do you handle notifications and updates?",
+              "call_count": 2,
+              "rank": 23
+            },
+            {
+              "canonical": "What are the differences between Linear Ask plans and enterprise features?",
+              "call_count": 2,
+              "rank": 24
+            },
+            {
+              "canonical": "How do customer requests integrate with external data sources?",
+              "call_count": 2,
+              "rank": 25
+            },
+            {
+              "canonical": "What is the difference between Linear Asks and other Linear Slack features?",
+              "call_count": 2,
+              "rank": 26
+            },
+            {
+              "canonical": "Does Linear support Teams integration for intake?",
+              "call_count": 2,
+              "rank": 27
+            },
+            {
+              "canonical": "Is there documentation for customer requests feature?",
+              "call_count": 1,
+              "rank": 28
+            },
+            {
+              "canonical": "How do you group and filter feedback?",
+              "call_count": 1,
+              "rank": 29
+            },
+            {
+              "canonical": "What are sub-initiatives?",
+              "call_count": 1,
+              "rank": 30
+            },
+            {
+              "canonical": "How does Linear compare to Jira Service Management?",
+              "call_count": 1,
+              "rank": 31
+            },
+            {
+              "canonical": "Can you use asks for support team benefits?",
+              "call_count": 1,
+              "rank": 32
+            },
+            {
+              "canonical": "Is asks community driven?",
+              "call_count": 1,
+              "rank": 33
+            },
+            {
+              "canonical": "How do individual team members provide initial intake?",
+              "call_count": 1,
+              "rank": 34
+            },
+            {
+              "canonical": "Do you have private team and channel support?",
+              "call_count": 1,
+              "rank": 35
+            },
+            {
+              "canonical": "How do you handle team member access who aren't part of Linear?",
+              "call_count": 1,
+              "rank": 36
+            },
+            {
+              "canonical": "How do field teams and sales use Linear for product requests?",
+              "call_count": 1,
+              "rank": 37
+            },
+            {
+              "canonical": "Can you automatically follow up on incomplete requests?",
+              "call_count": 1,
+              "rank": 38
+            },
+            {
+              "canonical": "Where do you currently track internal team requests?",
+              "call_count": 1,
+              "rank": 39
+            },
+            {
+              "canonical": "Can you delete or edit customer requests and data?",
+              "call_count": 1,
+              "rank": 40
+            },
+            {
+              "canonical": "How can you manage incident reporting and routing through Linear?",
+              "call_count": 1,
+              "rank": 41
+            },
+            {
+              "canonical": "Can you associate multiple customers with feature requests?",
+              "call_count": 1,
+              "rank": 42
+            },
+            {
+              "canonical": "What are the main feedback collection surfaces you want to track?",
+              "call_count": 1,
+              "rank": 43
+            },
+            {
+              "canonical": "Will Linear Ask support direct chat functionality?",
+              "call_count": 1,
+              "rank": 44
+            },
+            {
+              "canonical": "What does the SOC agent do?",
+              "call_count": 1,
+              "rank": 45
+            },
+            {
+              "canonical": "Can you use agent features within asks?",
+              "call_count": 1,
+              "rank": 46
+            },
+            {
+              "canonical": "How often do non-technical users need to submit tech requests?",
+              "call_count": 1,
+              "rank": 47
+            },
+            {
+              "canonical": "What level of Linear license does the organization currently have?",
+              "call_count": 1,
+              "rank": 48
+            },
+            {
+              "canonical": "Is Slack workflow access available for private teams?",
+              "call_count": 1,
+              "rank": 49
+            },
+            {
+              "canonical": "Can you add other teams like RevOps to intake channels?",
+              "call_count": 1,
+              "rank": 50
+            },
+            {
+              "canonical": "Are intake forms publicly available without Linear licenses?",
+              "call_count": 1,
+              "rank": 51
+            }
+          ]
+        },
+        {
+          "name": "Workflow Automation",
+          "rank": 10,
+          "total_calls": 84,
+          "total_questions": 150,
+          "clusters": [
+            {
+              "canonical": "How do triage routing rules work and what customization options are available?",
+              "call_count": 17,
+              "rank": 1
+            },
+            {
+              "canonical": "Can Linear automate issue lifecycle events like releases, notifications, and status transitions?",
+              "call_count": 11,
+              "rank": 2
+            },
+            {
+              "canonical": "What automation capabilities does Linear offer and how do they compare to other tools?",
+              "call_count": 10,
+              "rank": 3
+            },
+            {
+              "canonical": "Can you customize issue statuses for different teams and workflows?",
+              "call_count": 9,
+              "rank": 4
+            },
+            {
+              "canonical": "What customizable workflows can Linear support for different business teams?",
+              "call_count": 9,
+              "rank": 5
+            },
+            {
+              "canonical": "Can Linear automatically assign issues based on labels, keywords, or other criteria?",
+              "call_count": 7,
+              "rank": 6
+            },
+            {
+              "canonical": "How can Linear integrate with external tools and APIs for custom workflows?",
+              "call_count": 7,
+              "rank": 7
+            },
+            {
+              "canonical": "What workflow best practices and documentation does Linear provide?",
+              "call_count": 7,
+              "rank": 8
+            },
+            {
+              "canonical": "How can Linear categorize and organize different types of work and tasks?",
+              "call_count": 6,
+              "rank": 9
+            },
+            {
+              "canonical": "How does Linear handle complex workflows like ITSM, vulnerabilities, and remediation processes?",
+              "call_count": 5,
+              "rank": 10
+            },
+            {
+              "canonical": "Can Linear automatically create subtasks or related issues based on conditions?",
+              "call_count": 5,
+              "rank": 11
+            },
+            {
+              "canonical": "What is the current workflow process and how does it work?",
+              "call_count": 5,
+              "rank": 12
+            },
+            {
+              "canonical": "How can Linear handle complex approval workflows and change management processes?",
+              "call_count": 4,
+              "rank": 13
+            },
+            {
+              "canonical": "What are Linear's capabilities for work in progress limits and capacity management?",
+              "call_count": 4,
+              "rank": 14
+            }
+          ]
+        },
+        {
+          "name": "Migrations & Data Import",
+          "rank": 11,
+          "total_calls": 79,
+          "total_questions": 210,
+          "clusters": [
+            {
+              "canonical": "What does the general migration process look like and how long does it take?",
+              "call_count": 27,
+              "rank": 1
+            },
+            {
+              "canonical": "Does Linear have native import tools for migrating from Jira?",
+              "call_count": 12,
+              "rank": 2
+            },
+            {
+              "canonical": "Do you provide migration support or is it self-service?",
+              "call_count": 10,
+              "rank": 3
+            },
+            {
+              "canonical": "Can we do a partial migration or selective import from Jira to Linear?",
+              "call_count": 9,
+              "rank": 4
+            },
+            {
+              "canonical": "Can we migrate data from other tools besides Jira?",
+              "call_count": 9,
+              "rank": 5
+            },
+            {
+              "canonical": "What Jira data and fields map to Linear during migration?",
+              "call_count": 8,
+              "rank": 6
+            },
+            {
+              "canonical": "How does migration work from Asana to Linear?",
+              "call_count": 6,
+              "rank": 7
+            },
+            {
+              "canonical": "Can we set up a sync between Linear and Jira during migration?",
+              "call_count": 6,
+              "rank": 8
+            },
+            {
+              "canonical": "How does the Linear to Linear migration work and what data transfers?",
+              "call_count": 4,
+              "rank": 9
+            },
+            {
+              "canonical": "What current tool usage information do you need for migration planning?",
+              "call_count": 4,
+              "rank": 10
+            },
+            {
+              "canonical": "How are users handled during the import process?",
+              "call_count": 3,
+              "rank": 11
+            },
+            {
+              "canonical": "How does CSV import work for migration?",
+              "call_count": 3,
+              "rank": 12
+            },
+            {
+              "canonical": "How do we handle migration scope and team decisions?",
+              "call_count": 3,
+              "rank": 13
+            },
+            {
+              "canonical": "How do we map our current data structures to Linear?",
+              "call_count": 3,
+              "rank": 14
+            },
+            {
+              "canonical": "Should we migrate everything or start with a clean slate?",
+              "call_count": 3,
+              "rank": 15
+            },
+            {
+              "canonical": "Should we migrate existing workspace or create new one?",
+              "call_count": 3,
+              "rank": 16
+            },
+            {
+              "canonical": "Do you need to migrate data from your current system?",
+              "call_count": 3,
+              "rank": 17
+            },
+            {
+              "canonical": "Can I test or preview the migration before running it?",
+              "call_count": 2,
+              "rank": 18
+            },
+            {
+              "canonical": "What are best practices for teams migrating from other tools?",
+              "call_count": 2,
+              "rank": 19
+            },
+            {
+              "canonical": "Can we import skills or OKRs from other systems?",
+              "call_count": 2,
+              "rank": 20
+            },
+            {
+              "canonical": "How should we handle labels and categorization in migration?",
+              "call_count": 2,
+              "rank": 21
+            },
+            {
+              "canonical": "Can we export data from Linear if we need to leave?",
+              "call_count": 1,
+              "rank": 22
+            },
+            {
+              "canonical": "Do you have migration support for Wrangle to Linear?",
+              "call_count": 1,
+              "rank": 23
+            },
+            {
+              "canonical": "Can we automate migration using external tools?",
+              "call_count": 1,
+              "rank": 24
+            },
+            {
+              "canonical": "When should we start the import process?",
+              "call_count": 1,
+              "rank": 25
+            },
+            {
+              "canonical": "What is a project key and how do I find it?",
+              "call_count": 1,
+              "rank": 26
+            },
+            {
+              "canonical": "Can I import to a specific team in Linear?",
+              "call_count": 1,
+              "rank": 27
+            },
+            {
+              "canonical": "Is time tracking available in Linear?",
+              "call_count": 1,
+              "rank": 28
+            },
+            {
+              "canonical": "Will Linear maintain performance with large data imports?",
+              "call_count": 1,
+              "rank": 29
+            },
+            {
+              "canonical": "Do you migrate documentation when replacing other tools?",
+              "call_count": 1,
+              "rank": 30
+            },
+            {
+              "canonical": "Does Linear support epic and child relationships from Jira?",
+              "call_count": 1,
+              "rank": 31
+            },
+            {
+              "canonical": "What export options are available from current systems?",
+              "call_count": 1,
+              "rank": 32
+            },
+            {
+              "canonical": "What is the archive functionality timeline in Linear?",
+              "call_count": 1,
+              "rank": 33
+            },
+            {
+              "canonical": "Can we demonstrate our current app configuration?",
+              "call_count": 1,
+              "rank": 34
+            }
+          ]
+        },
+        {
+          "name": "Competitors & Alternatives",
+          "rank": 12,
+          "total_calls": 65,
+          "total_questions": 108,
+          "clusters": [
+            {
+              "canonical": "How does Linear handle specific Jira workflows and processes?",
+              "call_count": 7,
+              "rank": 1
+            },
+            {
+              "canonical": "How does Linear compare to Jira overall?",
+              "call_count": 6,
+              "rank": 2
+            },
+            {
+              "canonical": "What are your current pain points with Jira?",
+              "call_count": 5,
+              "rank": 3
+            },
+            {
+              "canonical": "What tools were you using before Linear?",
+              "call_count": 5,
+              "rank": 4
+            },
+            {
+              "canonical": "Can Linear fully replace Jira?",
+              "call_count": 4,
+              "rank": 5
+            },
+            {
+              "canonical": "How does Linear's pricing compare to Jira?",
+              "call_count": 4,
+              "rank": 6
+            },
+            {
+              "canonical": "How do Linear and Jira integrations work together?",
+              "call_count": 4,
+              "rank": 7
+            },
+            {
+              "canonical": "How does Linear compare to Asana?",
+              "call_count": 4,
+              "rank": 8
+            },
+            {
+              "canonical": "What is Linear's value proposition for migration from current tools?",
+              "call_count": 4,
+              "rank": 9
+            },
+            {
+              "canonical": "What are Linear's key differentiators and advantages over Jira?",
+              "call_count": 3,
+              "rank": 10
+            },
+            {
+              "canonical": "How does Linear handle Jira migration and terminology mapping?",
+              "call_count": 3,
+              "rank": 11
+            },
+            {
+              "canonical": "How does Linear's hierarchy compare to Jira's structure?",
+              "call_count": 3,
+              "rank": 12
+            },
+            {
+              "canonical": "Can Linear replace Confluence/Notion for documentation?",
+              "call_count": 3,
+              "rank": 13
+            },
+            {
+              "canonical": "How does Linear compare to other project management tools?",
+              "call_count": 3,
+              "rank": 14
+            },
+            {
+              "canonical": "What contract and licensing details do you have with current tools?",
+              "call_count": 3,
+              "rank": 15
+            },
+            {
+              "canonical": "What are Linear's competitive strategies and sales materials?",
+              "call_count": 3,
+              "rank": 16
+            },
+            {
+              "canonical": "What's driving your interest in Linear?",
+              "call_count": 3,
+              "rank": 17
+            },
+            {
+              "canonical": "Can Linear handle Jira's customization capabilities?",
+              "call_count": 2,
+              "rank": 18
+            },
+            {
+              "canonical": "How does Linear handle AI and workflow automation compared to Jira?",
+              "call_count": 2,
+              "rank": 19
+            },
+            {
+              "canonical": "Does Linear work for non-engineering teams like IT/service desk?",
+              "call_count": 2,
+              "rank": 20
+            },
+            {
+              "canonical": "How does Linear handle reporting and visualization compared to competitors?",
+              "call_count": 2,
+              "rank": 21
+            },
+            {
+              "canonical": "How does Linear work with hybrid or multi-tool environments?",
+              "call_count": 2,
+              "rank": 22
+            },
+            {
+              "canonical": "What upcoming Linear features address competitive gaps?",
+              "call_count": 2,
+              "rank": 23
+            },
+            {
+              "canonical": "What would we lose by switching to Linear?",
+              "call_count": 2,
+              "rank": 24
+            },
+            {
+              "canonical": "Can Linear handle product management features like ProductBoard?",
+              "call_count": 1,
+              "rank": 25
+            },
+            {
+              "canonical": "Who owns the decision-making for tool selection?",
+              "call_count": 1,
+              "rank": 26
+            },
+            {
+              "canonical": "How do you measure success metrics between tools?",
+              "call_count": 1,
+              "rank": 27
+            },
+            {
+              "canonical": "Does Linear integrate with development tools like GitHub?",
+              "call_count": 1,
+              "rank": 28
+            },
+            {
+              "canonical": "What are you currently using for ticket management?",
+              "call_count": 1,
+              "rank": 29
+            },
+            {
+              "canonical": "How does Linear compare to Azure DevOps?",
+              "call_count": 1,
+              "rank": 30
+            },
+            {
+              "canonical": "What are Linear's integration capabilities with other systems?",
+              "call_count": 1,
+              "rank": 31
+            },
+            {
+              "canonical": "How does Linear handle complex enterprise requirements?",
+              "call_count": 1,
+              "rank": 32
+            },
+            {
+              "canonical": "What is your experience with Atlassian products?",
+              "call_count": 1,
+              "rank": 33
+            },
+            {
+              "canonical": "Are you currently evaluating other tools besides Linear?",
+              "call_count": 1,
+              "rank": 34
+            },
+            {
+              "canonical": "Have you seen Linear before?",
+              "call_count": 1,
+              "rank": 35
+            },
+            {
+              "canonical": "How does Linear handle development workflow differently?",
+              "call_count": 1,
+              "rank": 36
+            },
+            {
+              "canonical": "What other tools are you considering?",
+              "call_count": 1,
+              "rank": 37
+            },
+            {
+              "canonical": "Why choose Linear over custom solutions?",
+              "call_count": 1,
+              "rank": 38
+            }
+          ]
+        },
+        {
+          "name": "Security & Compliance",
+          "rank": 13,
+          "total_calls": 59,
+          "total_questions": 141,
+          "clusters": [
+            {
+              "canonical": "Does Linear support SSO integration with identity providers like Okta?",
+              "call_count": 13,
+              "rank": 1
+            },
+            {
+              "canonical": "Does Linear have HIPAA compliance and can you sign a BAA?",
+              "call_count": 11,
+              "rank": 2
+            },
+            {
+              "canonical": "Does Linear support SAML and SCIM integration?",
+              "call_count": 11,
+              "rank": 3
+            },
+            {
+              "canonical": "What security features are included in the enterprise plan?",
+              "call_count": 7,
+              "rank": 4
+            },
+            {
+              "canonical": "Do you have security documentation, trust center, or pen test results available?",
+              "call_count": 7,
+              "rank": 5
+            },
+            {
+              "canonical": "Does Linear have SOC 2 compliance?",
+              "call_count": 6,
+              "rank": 6
+            },
+            {
+              "canonical": "What are the audit log capabilities and what does it track?",
+              "call_count": 5,
+              "rank": 7
+            },
+            {
+              "canonical": "Does Linear support SCIM group provisioning?",
+              "call_count": 4,
+              "rank": 8
+            },
+            {
+              "canonical": "Can Linear be hosted in the EU or other specific regions?",
+              "call_count": 3,
+              "rank": 9
+            },
+            {
+              "canonical": "What is domain claiming and how does it work?",
+              "call_count": 2,
+              "rank": 10
+            },
+            {
+              "canonical": "Does Linear have GDPR compliance?",
+              "call_count": 2,
+              "rank": 11
+            },
+            {
+              "canonical": "Are there security considerations for third-party integrations?",
+              "call_count": 2,
+              "rank": 12
+            },
+            {
+              "canonical": "Does Linear have approval workflows for compliance?",
+              "call_count": 2,
+              "rank": 13
+            },
+            {
+              "canonical": "Does Linear support custom roles beyond admin and member?",
+              "call_count": 2,
+              "rank": 14
+            },
+            {
+              "canonical": "Can Linear work with strict networking and security requirements?",
+              "call_count": 2,
+              "rank": 15
+            },
+            {
+              "canonical": "Is there a security review process required?",
+              "call_count": 2,
+              "rank": 16
+            },
+            {
+              "canonical": "Does Linear support just-in-time provisioning for automatic user creation?",
+              "call_count": 1,
+              "rank": 17
+            },
+            {
+              "canonical": "How does SSO affect password login and user removal?",
+              "call_count": 1,
+              "rank": 18
+            },
+            {
+              "canonical": "What is the difference between SAML and SCIM?",
+              "call_count": 1,
+              "rank": 19
+            },
+            {
+              "canonical": "Can you share admin controls and permissions documentation?",
+              "call_count": 1,
+              "rank": 20
+            },
+            {
+              "canonical": "Is SSO implementation self-serve or handled by Linear?",
+              "call_count": 1,
+              "rank": 21
+            },
+            {
+              "canonical": "What are Linear's SLA and uptime statistics?",
+              "call_count": 1,
+              "rank": 22
+            },
+            {
+              "canonical": "Are there any security gotchas with regulated customers?",
+              "call_count": 1,
+              "rank": 23
+            },
+            {
+              "canonical": "Does Linear handle data privacy in any non-standard ways?",
+              "call_count": 1,
+              "rank": 24
+            },
+            {
+              "canonical": "Do you accept security questionnaires for security reviews?",
+              "call_count": 1,
+              "rank": 25
+            },
+            {
+              "canonical": "How do SCIM attributes map to Linear display names?",
+              "call_count": 1,
+              "rank": 26
+            },
+            {
+              "canonical": "Can SSO be configured across multiple workspaces?",
+              "call_count": 1,
+              "rank": 27
+            },
+            {
+              "canonical": "Do you need domain verification for setup?",
+              "call_count": 1,
+              "rank": 28
+            },
+            {
+              "canonical": "Does Linear support IP restrictions for workspace access?",
+              "call_count": 1,
+              "rank": 29
+            },
+            {
+              "canonical": "Can Linear integrate with internal AWS/GCP infrastructure?",
+              "call_count": 1,
+              "rank": 30
+            },
+            {
+              "canonical": "Does Linear process employee data and how is it retained?",
+              "call_count": 1,
+              "rank": 31
+            },
+            {
+              "canonical": "Does Linear support strict task-level security permissions?",
+              "call_count": 1,
+              "rank": 32
+            },
+            {
+              "canonical": "How do you set up API keys and security access?",
+              "call_count": 1,
+              "rank": 33
+            },
+            {
+              "canonical": "Which SAML provider does Linear use?",
+              "call_count": 1,
+              "rank": 34
+            },
+            {
+              "canonical": "What is the SSO implementation timeline?",
+              "call_count": 1,
+              "rank": 35
+            },
+            {
+              "canonical": "What is the registration process for new accounts?",
+              "call_count": 1,
+              "rank": 36
+            },
+            {
+              "canonical": "Is BAA available on Enterprise plan?",
+              "call_count": 1,
+              "rank": 37
+            },
+            {
+              "canonical": "Why doesn't Jira allow AI features with BAA?",
+              "call_count": 1,
+              "rank": 38
+            },
+            {
+              "canonical": "Is HIPAA compliance only on enterprise plan?",
+              "call_count": 1,
+              "rank": 39
+            },
+            {
+              "canonical": "Do you need an NDA for SOC 2 documentation?",
+              "call_count": 1,
+              "rank": 40
+            },
+            {
+              "canonical": "What PII redaction capabilities does Linear have?",
+              "call_count": 1,
+              "rank": 41
+            },
+            {
+              "canonical": "Can automation rules update related tasks?",
+              "call_count": 1,
+              "rank": 42
+            },
+            {
+              "canonical": "What access does a specific user have?",
+              "call_count": 1,
+              "rank": 43
+            },
+            {
+              "canonical": "Can Linear handle data-driven prioritization granularity?",
+              "call_count": 1,
+              "rank": 44
+            },
+            {
+              "canonical": "Can you route AI through internal gateways instead of OpenAI?",
+              "call_count": 1,
+              "rank": 45
+            },
+            {
+              "canonical": "Can you filter issue visibility for guest users in projects?",
+              "call_count": 1,
+              "rank": 46
+            },
+            {
+              "canonical": "Are there plans for issue-level permissions?",
+              "call_count": 1,
+              "rank": 47
+            },
+            {
+              "canonical": "How do you access Linear from corporate portals?",
+              "call_count": 1,
+              "rank": 48
+            },
+            {
+              "canonical": "Does the sandbox have all enterprise features enabled?",
+              "call_count": 1,
+              "rank": 49
+            },
+            {
+              "canonical": "Can Linear bypass security requirements for AI features?",
+              "call_count": 1,
+              "rank": 50
+            },
+            {
+              "canonical": "How important is Okta integration to your organization?",
+              "call_count": 1,
+              "rank": 51
+            }
+          ]
+        },
+        {
+          "name": "Cycles",
+          "rank": 14,
+          "total_calls": 37,
+          "total_questions": 72,
+          "clusters": [
+            {
+              "canonical": "Are cycles the same as sprints and how does Linear support sprint-based workflows?",
+              "call_count": 8,
+              "rank": 1
+            },
+            {
+              "canonical": "How does capacity planning work in Linear and can you assign work based on team member availability?",
+              "call_count": 6,
+              "rank": 2
+            },
+            {
+              "canonical": "What are cycles in Linear and how do they work?",
+              "call_count": 5,
+              "rank": 3
+            },
+            {
+              "canonical": "Can Linear support kanban-style workflows instead of cycles/sprints?",
+              "call_count": 4,
+              "rank": 4
+            },
+            {
+              "canonical": "How are cycles configured - at team level or workspace level?",
+              "call_count": 4,
+              "rank": 5
+            },
+            {
+              "canonical": "How do burn-up charts work and what metrics do they use?",
+              "call_count": 4,
+              "rank": 6
+            },
+            {
+              "canonical": "Can you customize cycle names, durations, and settings?",
+              "call_count": 3,
+              "rank": 7
+            },
+            {
+              "canonical": "Can you copy or move work between cycles?",
+              "call_count": 3,
+              "rank": 8
+            },
+            {
+              "canonical": "How does sprint planning work in Linear?",
+              "call_count": 3,
+              "rank": 9
+            },
+            {
+              "canonical": "What is the relationship between cycles and projects?",
+              "call_count": 3,
+              "rank": 10
+            },
+            {
+              "canonical": "Can you customize how issues are displayed and grouped in cycle views?",
+              "call_count": 3,
+              "rank": 11
+            },
+            {
+              "canonical": "How do you compare or track progress across different cycles?",
+              "call_count": 2,
+              "rank": 12
+            },
+            {
+              "canonical": "Are cycles required or can teams work without them?",
+              "call_count": 2,
+              "rank": 13
+            },
+            {
+              "canonical": "Can cycles have cool down periods or other sprint-like features?",
+              "call_count": 2,
+              "rank": 14
+            },
+            {
+              "canonical": "How do you handle capacity planning and team availability in cycles?",
+              "call_count": 2,
+              "rank": 15
+            },
+            {
+              "canonical": "How do you track team capacity and velocity in Linear?",
+              "call_count": 2,
+              "rank": 16
+            },
+            {
+              "canonical": "What cycle automation and goal tracking features does Linear have?",
+              "call_count": 2,
+              "rank": 17
+            },
+            {
+              "canonical": "How do you handle story pointing and effort estimation?",
+              "call_count": 2,
+              "rank": 18
+            },
+            {
+              "canonical": "Does Linear support team-specific sprint configurations?",
+              "call_count": 2,
+              "rank": 19
+            },
+            {
+              "canonical": "How do you run daily standups with cycles in Linear?",
+              "call_count": 1,
+              "rank": 20
+            },
+            {
+              "canonical": "How does Intercom integration work with Linear?",
+              "call_count": 1,
+              "rank": 21
+            },
+            {
+              "canonical": "Can the system provide summaries based on subtask status?",
+              "call_count": 1,
+              "rank": 22
+            }
+          ]
+        },
+        {
+          "name": "Other / Emerging",
+          "rank": 15,
+          "total_calls": 124,
+          "total_questions": 288,
+          "clusters": [
+            {
+              "canonical": "What can Linear do and what are its high-level functionality capabilities?",
+              "call_count": 27,
+              "rank": 1
+            },
+            {
+              "canonical": "What tools do you currently use for project management, support, and development?",
+              "call_count": 19,
+              "rank": 2
+            },
+            {
+              "canonical": "What are Linear's documentation and knowledge management capabilities?",
+              "call_count": 17,
+              "rank": 3
+            },
+            {
+              "canonical": "What are your team size and organizational details?",
+              "call_count": 9,
+              "rank": 4
+            },
+            {
+              "canonical": "What integrations and API capabilities does Linear offer?",
+              "call_count": 8,
+              "rank": 5
+            },
+            {
+              "canonical": "What scheduling and logistics questions do you have?",
+              "call_count": 6,
+              "rank": 6
+            },
+            {
+              "canonical": "What are Linear's workflow capabilities for different team types?",
+              "call_count": 6,
+              "rank": 7
+            },
+            {
+              "canonical": "What AI tools, workflows, and capabilities are you using or interested in?",
+              "call_count": 6,
+              "rank": 8
+            },
+            {
+              "canonical": "What's on Linear's roadmap and what new features are coming?",
+              "call_count": 5,
+              "rank": 9
+            },
+            {
+              "canonical": "What support and customer success options are available?",
+              "call_count": 5,
+              "rank": 10
+            },
+            {
+              "canonical": "How does Linear compare to other tools like Jira and Confluence?",
+              "call_count": 4,
+              "rank": 11
+            },
+            {
+              "canonical": "What is your current understanding of Linear?",
+              "call_count": 4,
+              "rank": 12
+            },
+            {
+              "canonical": "What is your role and who makes decisions at your company?",
+              "call_count": 4,
+              "rank": 13
+            },
+            {
+              "canonical": "What are you trying to accomplish or improve with Linear?",
+              "call_count": 3,
+              "rank": 14
+            },
+            {
+              "canonical": "What are Linear's technical requirements and infrastructure details?",
+              "call_count": 3,
+              "rank": 15
+            },
+            {
+              "canonical": "How do you use Linear for customer feedback and issue management?",
+              "call_count": 3,
+              "rank": 16
+            },
+            {
+              "canonical": "How do we communicate and get support from Linear?",
+              "call_count": 2,
+              "rank": 17
+            },
+            {
+              "canonical": "What is Linear's background as a company?",
+              "call_count": 2,
+              "rank": 18
+            },
+            {
+              "canonical": "What demo options are available?",
+              "call_count": 2,
+              "rank": 19
+            },
+            {
+              "canonical": "How customizable is Linear for our specific needs?",
+              "call_count": 2,
+              "rank": 20
+            },
+            {
+              "canonical": "What other areas or workflows should we discuss?",
+              "call_count": 2,
+              "rank": 21
+            },
+            {
+              "canonical": "What industries and company types does Linear target?",
+              "call_count": 2,
+              "rank": 22
+            },
+            {
+              "canonical": "How does Linear handle project updates and releases?",
+              "call_count": 2,
+              "rank": 23
+            },
+            {
+              "canonical": "What is Linear's AI strategy and capabilities?",
+              "call_count": 2,
+              "rank": 24
+            },
+            {
+              "canonical": "What is the procurement and contract process?",
+              "call_count": 2,
+              "rank": 25
+            },
+            {
+              "canonical": "How does Linear handle enterprise security requirements?",
+              "call_count": 2,
+              "rank": 26
+            },
+            {
+              "canonical": "What are you missing or what else do you need?",
+              "call_count": 2,
+              "rank": 27
+            },
+            {
+              "canonical": "What prompted your interest in Linear?",
+              "call_count": 2,
+              "rank": 28
+            },
+            {
+              "canonical": "How is Linear performing for your team and what's working/not working?",
+              "call_count": 2,
+              "rank": 29
+            },
+            {
+              "canonical": "How does Linear's pricing and enterprise plans work?",
+              "call_count": 2,
+              "rank": 30
+            },
+            {
+              "canonical": "How do releases, projects, and initiatives work in Linear?",
+              "call_count": 2,
+              "rank": 31
+            },
+            {
+              "canonical": "What is your experience with Linear at other companies?",
+              "call_count": 2,
+              "rank": 32
+            },
+            {
+              "canonical": "What is your business context and market presence?",
+              "call_count": 2,
+              "rank": 33
+            },
+            {
+              "canonical": "How do you handle metadata, customer data, and administrative tasks?",
+              "call_count": 2,
+              "rank": 34
+            },
+            {
+              "canonical": "What are your requirements and criteria for tool selection?",
+              "call_count": 2,
+              "rank": 35
+            },
+            {
+              "canonical": "Can you clarify or repeat something from our discussion?",
+              "call_count": 2,
+              "rank": 36
+            },
+            {
+              "canonical": "What do you want to accomplish or get out of this call?",
+              "call_count": 2,
+              "rank": 37
+            },
+            {
+              "canonical": "Can you provide examples or send me information?",
+              "call_count": 2,
+              "rank": 38
+            },
+            {
+              "canonical": "Can you walk me through your sales process and motion?",
+              "call_count": 1,
+              "rank": 39
+            },
+            {
+              "canonical": "How does Linear handle performance with large amounts of data?",
+              "call_count": 1,
+              "rank": 40
+            },
+            {
+              "canonical": "What are your pipeline generation strategies?",
+              "call_count": 1,
+              "rank": 41
+            },
+            {
+              "canonical": "What are Linear's local-first architecture benefits?",
+              "call_count": 1,
+              "rank": 42
+            },
+            {
+              "canonical": "What is your team structure and territory?",
+              "call_count": 1,
+              "rank": 43
+            },
+            {
+              "canonical": "Where is the Linear team located?",
+              "call_count": 1,
+              "rank": 44
+            },
+            {
+              "canonical": "Do you have shared communication channels with customers?",
+              "call_count": 1,
+              "rank": 45
+            },
+            {
+              "canonical": "How does Linear handle customer tracking and updates?",
+              "call_count": 1,
+              "rank": 46
+            },
+            {
+              "canonical": "Are you planning to use Linear for client work or internal work?",
+              "call_count": 1,
+              "rank": 47
+            },
+            {
+              "canonical": "What stage are you at in the evaluation process?",
+              "call_count": 1,
+              "rank": 48
+            },
+            {
+              "canonical": "How do you coordinate across distributed product teams?",
+              "call_count": 1,
+              "rank": 49
+            },
+            {
+              "canonical": "What are your thoughts on Linear's product quality?",
+              "call_count": 1,
+              "rank": 50
+            },
+            {
+              "canonical": "Do your founders have technical preferences?",
+              "call_count": 1,
+              "rank": 51
+            },
+            {
+              "canonical": "What type of AI engines are you building?",
+              "call_count": 1,
+              "rank": 52
+            },
+            {
+              "canonical": "Are we waiting on anyone else for this call?",
+              "call_count": 1,
+              "rank": 53
+            },
+            {
+              "canonical": "Did someone raise a specific concern?",
+              "call_count": 1,
+              "rank": 54
+            },
+            {
+              "canonical": "Should we wait for others or start discussing topics?",
+              "call_count": 1,
+              "rank": 55
+            },
+            {
+              "canonical": "Is there a Slack thread about specific issues?",
+              "call_count": 1,
+              "rank": 56
+            },
+            {
+              "canonical": "Is that a personal item on your wall?",
+              "call_count": 1,
+              "rank": 57
+            },
+            {
+              "canonical": "Why did Linear choose the term 'pipeline'?",
+              "call_count": 1,
+              "rank": 58
+            },
+            {
+              "canonical": "Do you have scheduling constraints?",
+              "call_count": 1,
+              "rank": 59
+            },
+            {
+              "canonical": "What is your current development cadence?",
+              "call_count": 1,
+              "rank": 60
+            },
+            {
+              "canonical": "How much are you using Fin currently?",
+              "call_count": 1,
+              "rank": 61
+            },
+            {
+              "canonical": "What restaurant food question?",
+              "call_count": 1,
+              "rank": 62
+            },
+            {
+              "canonical": "Are you using cloud persistence currently?",
+              "call_count": 1,
+              "rank": 63
+            },
+            {
+              "canonical": "What are your growth plans for Europe?",
+              "call_count": 1,
+              "rank": 64
+            },
+            {
+              "canonical": "What companies should we target in Europe?",
+              "call_count": 1,
+              "rank": 65
+            },
+            {
+              "canonical": "How did you progress from rep to leadership?",
+              "call_count": 1,
+              "rank": 66
+            },
+            {
+              "canonical": "Is this relevant for your software team?",
+              "call_count": 1,
+              "rank": 67
+            },
+            {
+              "canonical": "What is your company size scale?",
+              "call_count": 1,
+              "rank": 68
+            },
+            {
+              "canonical": "How often do you encounter this issue?",
+              "call_count": 1,
+              "rank": 69
+            },
+            {
+              "canonical": "Can I share my screen?",
+              "call_count": 1,
+              "rank": 70
+            },
+            {
+              "canonical": "Is there a plan for cloud code?",
+              "call_count": 1,
+              "rank": 71
+            },
+            {
+              "canonical": "Does Damien work at Linear?",
+              "call_count": 1,
+              "rank": 72
+            },
+            {
+              "canonical": "Do you use Gong for customer interactions?",
+              "call_count": 1,
+              "rank": 73
+            },
+            {
+              "canonical": "Can we screen share Linear setups?",
+              "call_count": 1,
+              "rank": 74
+            },
+            {
+              "canonical": "What is the current evaluation timeline?",
+              "call_count": 1,
+              "rank": 75
+            },
+            {
+              "canonical": "What collaboration and commenting features does Linear have?",
+              "call_count": 1,
+              "rank": 76
+            },
+            {
+              "canonical": "How do you get started with Linear?",
+              "call_count": 1,
+              "rank": 77
+            },
+            {
+              "canonical": "What is your current process for feature requests and screening?",
+              "call_count": 1,
+              "rank": 78
+            },
+            {
+              "canonical": "What problems do you need Linear to solve?",
+              "call_count": 1,
+              "rank": 79
+            },
+            {
+              "canonical": "How do you track development metrics?",
+              "call_count": 1,
+              "rank": 80
+            },
+            {
+              "canonical": "How can Linear help improve development speed?",
+              "call_count": 1,
+              "rank": 81
+            },
+            {
+              "canonical": "What is Linear's product management positioning?",
+              "call_count": 1,
+              "rank": 82
+            },
+            {
+              "canonical": "What time zone and availability questions do you have?",
+              "call_count": 1,
+              "rank": 83
+            }
+          ]
+        }
+      ]
     }
   ]
 }
